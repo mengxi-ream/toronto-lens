@@ -8,6 +8,10 @@
 
 - ✨ feat: test feat [994bbb3]
 
+### Changed
+
+- 🔧 chore: remove useless code [4458cc3]
+
 ### Miscellaneous
 
 - 👷 ci: add gitmoji changelog [458a146]
