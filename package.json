@@ -12,7 +12,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"changelog": "conventional-changelog -p gitmoji-config -i CHANGELOG.md -s",
+		"changelog": "gitmoji-changelog",
 		"gh-pages": "VITE_BUILD_GH_PAGES=true pnpm run build && npx gh-pages -d build -t -r https://github.students.cs.ubc.ca/kzhang48/cpsc447-g15.git"
 	},
 	"devDependencies": {
@@ -32,6 +32,7 @@
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
 		"gh-pages": "^6.3.0",
+		"gitmoji-changelog": "^2.3.0",
 		"globals": "^15.14.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.4.3",
