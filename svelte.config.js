@@ -12,7 +12,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : '/kzhang48/project'
+			base: process.argv.includes('dev') ? '' : '/kzhang48/cpsc447-g15'
 		}
 	}
 };
