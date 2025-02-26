@@ -31,7 +31,14 @@ You can preview the production build with `pnpm preview`.
 
 ## How to find the index.html entry point
 
-After running `pnpm build`, you can find the index.html entry point in the `build` folder. You can use VSCode Live Server extension to view the website.
+After running `pnpm build`, you can find the index.html entry point in the `build` folder.
+
+You can use VSCode Live Server extension to view the website or deploy it.
+
+Please note that if you are using VSCode Live Server to view the website, you should open the `build` folder as the root directory in VSCode. Otherwise, Live Server will consider the parent directory as the root, which may result in incorrect paths, such as faulty image links.
+
+> [!CAUTION]
+> If you are a TA and have any questions regarding deployment or the index.html entry point, please reach out to Kuiliang Zhang at kzhang48@student.ubc.ca.
 
 ## How to deploy
 
