@@ -19,6 +19,8 @@ pnpm dev
 pnpm dev --open
 ```
 
+To create a new commit, please follow the [Gitmoji Commit Message Convention](https://www.yuque.com/arvinxx-fe/workflow/gcm-v2).
+
 ## Building
 
 To create a production version of your app:
