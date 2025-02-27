@@ -19,7 +19,7 @@ pnpm dev
 pnpm dev --open
 ```
 
-To create a new commit, please follow the [Gitmoji Commit Message Convention](https://www.yuque.com/arvinxx-fe/workflow/gcm-v2).
+To create a new commit, please follow the [Gitmoji Commit Message Convention](https://www.yuque.com/arvinxx-fe/workflow/gcm-v2) and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ## Building
 
