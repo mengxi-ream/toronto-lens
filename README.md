@@ -4,11 +4,17 @@ D3 Visualization for UBC CPSC447
 
 [Live Demo](https://pages.github.students.cs.ubc.ca/kzhang48/cpsc447-g15/)
 
-## Developing
+## Install dependencies
 
 Once you've created a project and installed dependencies with `pnpm install` (or `npm install` or `yarn`), start a development server:
 
+```bash
+pnpm install
+```
+
 We recommend using pnpm to install dependencies, but you can use npm or yarn as well.
+
+## Developing
 
 To run the development server, run the following command:
 
