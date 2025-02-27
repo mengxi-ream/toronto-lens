@@ -45,8 +45,10 @@ You can use VSCode Live Server extension to view the website or deploy it.
 
 Please note that if you are using VSCode Live Server to view the website, you should open the `build` folder as the root directory in VSCode. Otherwise, Live Server will consider the parent directory as the root, which may result in incorrect paths, such as faulty image links.
 
+## TA: Please Read This
+
 > [!CAUTION]
-> If you are a TA and have any questions regarding deployment or the index.html entry point, please reach out to Kuiliang Zhang at kzhang48@student.ubc.ca.
+> If you are teaching staff and have any questions regarding deployment or the index.html entry point, please reach out to Kuiliang Zhang at kzhang48@student.ubc.ca.
 
 ## How to deploy
 
