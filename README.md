@@ -6,13 +6,13 @@ D3 Visualization for UBC CPSC447
 
 ## Install dependencies
 
-Once you've created a project and installed dependencies with `pnpm install` (or `npm install` or `yarn`), start a development server:
+Before developing or building the project, you need to install the dependencies.
 
 ```bash
 pnpm install
 ```
 
-We recommend using pnpm to install dependencies, but you can use npm or yarn as well.
+We recommend using pnpm to install dependencies, but you can use npm or yarn as well (`npm install` or `yarn`).
 
 ## Developing
 
