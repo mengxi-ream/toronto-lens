@@ -3,6 +3,7 @@
 	import * as d3 from 'd3';
 	import { DisasterSchema } from '$lib/types/disaster';
 	import { cn } from '$lib/utils/utils';
+	import { base } from '$app/paths';
 
 	let { class: className = '' } = $props();
 	let visContainer: HTMLElement;
@@ -11,7 +12,7 @@
 		if (!visContainer) return;
 
 		const initVis = async () => {
-			const rawData = await d3.csv('/data/disaster_costs.csv');
+			const rawData = await d3.csv(`${base}/data/disaster_costs.csv`);
 			const data = rawData.map((row: unknown) => DisasterSchema.parse(row));
 
 			const timeline = new Timeline(
