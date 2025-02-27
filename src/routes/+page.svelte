@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcomeFallback from '$lib/images/svelte-welcome.png';
+	import Disaster from '$lib/components/viz/disaster/Disaster.svelte';
 </script>
 
 <svelte:head>
@@ -26,6 +27,7 @@
 	</h2>
 
 	<Counter />
+	<Disaster class="mt-16" />
 </section>
 
 <style>
