@@ -56,6 +56,6 @@ Please note that if you are using VSCode Live Server to view the website, you sh
 pnpm gh-pages
 ```
 
-Now only Kuiliang Zhang has access to deploy the website because the script is set to push to his GitHub Pages.
+Currently, only Kuiliang Zhang has the ability to deploy the website, as the script is configured to push to his GitHub Pages.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment. We use static adapter for this project.
