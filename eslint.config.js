@@ -30,10 +30,5 @@ export default ts.config(
 				parser: ts.parser
 			}
 		}
-	},
-	{
-		rules: {
-			'no-unused-vars': 'error'
-		}
 	}
 );
