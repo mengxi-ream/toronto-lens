@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import { base } from '$app/paths';
+	import welcome from '$lib/images/svelte-welcome.webp';
+	import welcomeFallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
@@ -8,7 +10,15 @@
 </svelte:head>
 
 <div class="text-column">
-	<h1>About this app</h1>
+	<h1>
+		<span class="welcome">
+			<picture>
+				<source srcset={welcome} type="image/webp" />
+				<img src={welcomeFallback} alt="Welcome" />
+			</picture>
+		</span>
+		About this app
+	</h1>
 
 	<p>
 		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
@@ -28,3 +38,25 @@
 		Try using it with JavaScript disabled!
 	</p>
 </div>
+
+<style>
+	h1 {
+		width: 100%;
+	}
+
+	.welcome {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding: 0 0 calc(100% * 495 / 2048) 0;
+	}
+
+	.welcome img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		display: block;
+	}
+</style>
