@@ -17,7 +17,7 @@ jobs:
       - name: Print current directory
         run: pwd
 
-      - name: List files
+      - name: List files in current directory
         run: ls -la
 
       - name: Print environment information
