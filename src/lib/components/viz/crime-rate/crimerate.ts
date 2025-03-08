@@ -17,6 +17,7 @@ interface CrimeData {
 	year: number;
 	crime_type: string;
 	crime_rate: number;
+	neighbourhood: string;
 }
 
 export interface CrimeRateConfig {
@@ -33,6 +34,7 @@ export interface CrimeRateConfig {
 	legendHeight?: number;
 	legendRadius?: number;
 	tooltipPadding?: number;
+	onNeighbourhoodChange?: (neighbourhood: string) => void;
 }
 
 export class CrimeRateChart {
@@ -48,6 +50,9 @@ export class CrimeRateChart {
 	private xAxis!: d3.Selection<SVGGElement, unknown, null, undefined>;
 	private yAxis!: d3.Selection<SVGGElement, unknown, null, undefined>;
 	private data: CrimeData[];
+	private neighbourhoods: string[] = [];
+	private currentNeighbourhood: string = 'Toronto';
+	private dropdown!: d3.Selection<HTMLSelectElement, unknown, null, undefined>;
 
 	constructor(config: CrimeRateConfig, data: CrimeData[]) {
 		this.config = {
@@ -58,7 +63,8 @@ export class CrimeRateChart {
 			margin: config.margin ?? { top: 120, right: 20, bottom: 20, left: 45 },
 			legendWidth: config.legendWidth ?? 5,
 			legendHeight: config.legendHeight ?? 5,
-			legendRadius: config.legendRadius ?? 5
+			legendRadius: config.legendRadius ?? 5,
+			onNeighbourhoodChange: config.onNeighbourhoodChange
 		};
 
 		this.data = data;
@@ -76,6 +82,35 @@ export class CrimeRateChart {
 	}
 
 	private initVis(parentElement: HTMLElement): void {
+		// Create dropdown before SVG
+		this.neighbourhoods = Array.from(new Set(this.data.map((d) => d.neighbourhood))).sort();
+
+		this.dropdown = d3
+			.select(parentElement)
+			.append('select')
+			.attr('class', 'neighbourhood-select')
+			.style('margin-bottom', '10px')
+			.style('padding', '5px')
+			.style('width', '200px');
+
+		this.dropdown
+			.selectAll('option')
+			.data(this.neighbourhoods)
+			.enter()
+			.append('option')
+			.text((d) => d)
+			.attr('value', (d) => d)
+			.property('selected', (d) => d === this.currentNeighbourhood);
+
+		// Add event listener
+		this.dropdown.on('change', (event) => {
+			this.currentNeighbourhood = event.target.value;
+			this.updateVis();
+			if (this.config.onNeighbourhoodChange) {
+				this.config.onNeighbourhoodChange(this.currentNeighbourhood);
+			}
+		});
+
 		// Create SVG
 		this.svg = d3
 			.select(parentElement)
@@ -117,12 +152,18 @@ export class CrimeRateChart {
 	}
 
 	public updateVis(): void {
+		// Filter data for selected neighbourhood
+		const filteredData = this.data.filter((d) => d.neighbourhood === this.currentNeighbourhood);
+
 		// Group data by crime type
-		const crimeTypes = Array.from(new Set(this.data.map((d) => d.crime_type)));
+		const crimeTypes = Array.from(new Set(filteredData.map((d) => d.crime_type)));
+
+		// Clear existing paths
+		this.chart.selectAll('.line').remove();
 
 		// Update scales
-		this.xScale.domain(d3.extent(this.data, (d) => new Date(d.year, 0)) as [Date, Date]);
-		const maxCrimeRate = d3.max(this.data, (d) => +d.crime_rate) as number;
+		this.xScale.domain(d3.extent(filteredData, (d) => new Date(d.year, 0)) as [Date, Date]);
+		const maxCrimeRate = d3.max(filteredData, (d) => +d.crime_rate) as number;
 		this.yScale.domain([0, maxCrimeRate * 1.1]);
 		this.colorScale.domain(crimeTypes);
 		console.log('maxCrimeRate', maxCrimeRate);
@@ -135,7 +176,7 @@ export class CrimeRateChart {
 
 		// Draw lines
 		crimeTypes.forEach((crimeType) => {
-			const crimeData = this.data.filter((d) => d.crime_type === crimeType);
+			const crimeData = filteredData.filter((d) => d.crime_type === crimeType);
 
 			this.chart
 				.append('path')
