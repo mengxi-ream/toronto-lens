@@ -1,4 +1,5 @@
-import type { DisasterCategory, DisasterData, TimelineConfig } from '$lib/types/disaster';
+import type { DisasterCategory, DisasterData } from '$lib/types/data/disaster';
+import type { TimelineConfig } from '$lib/types/chart/timeline';
 import type { NumberValue } from 'd3';
 import * as d3 from 'd3';
 

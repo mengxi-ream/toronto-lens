@@ -1,18 +1,5 @@
 import * as d3 from 'd3';
-
-const customColors = [
-	'#1664FF',
-	'#1AC6FF',
-	'#FF8A00',
-	'#3CC780',
-	'#7442D4',
-	'#FFC400',
-	'#304D77',
-	'#B48DEB',
-	'#009488',
-	'#FF7DDA'
-];
-
+import { colorSchema } from '$lib/utils/colorSchema';
 interface CrimeData {
 	year: number;
 	crime_type: string;
@@ -125,7 +112,7 @@ export class CrimeRateChart {
 		// Initialize scales
 		this.xScale = d3.scaleTime().range([0, this.width]);
 		this.yScale = d3.scaleLinear().range([this.height, 0]);
-		this.colorScale = d3.scaleOrdinal(customColors);
+		this.colorScale = d3.scaleOrdinal(colorSchema);
 
 		// Initialize axes
 		this.xAxis = this.chart.append('g').attr('transform', `translate(0,${this.height})`);

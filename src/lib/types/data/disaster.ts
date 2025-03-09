@@ -30,19 +30,3 @@ export const DisasterSchema = z
 	}));
 
 export type DisasterData = z.infer<typeof DisasterSchema>;
-
-export interface TimelineConfig {
-	parentElement: HTMLElement;
-	containerWidth?: number;
-	containerHeight?: number;
-	tooltipPadding?: number;
-	margin?: {
-		top: number;
-		right: number;
-		bottom: number;
-		left: number;
-	};
-	legendWidth?: number;
-	legendHeight?: number;
-	legendRadius?: number;
-}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CrimeRateChart } from './crimerate';
+	import { CrimeRateChart } from './crime-rate';
 	import * as d3 from 'd3';
 	import { cn } from '$lib/utils/utils';
 	import { base } from '$app/paths';

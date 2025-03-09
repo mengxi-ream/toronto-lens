@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Timeline } from './timeline';
 	import * as d3 from 'd3';
-	import { DisasterSchema } from '$lib/types/disaster';
+	import { DisasterSchema } from '$lib/types/data/disaster';
 	import { cn } from '$lib/utils/utils';
 	import { base } from '$app/paths';
 
