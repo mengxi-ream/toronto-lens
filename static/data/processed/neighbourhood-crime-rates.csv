@@ -33,6 +33,7 @@ Agincourt North,Robbery,2017,30353,22,72.48048
 Agincourt North,Robbery,2018,30797,43,139.624
 Agincourt North,Robbery,2019,31216,37,118.529
 Agincourt North,Robbery,2020,31618,17,53.76684
+Agincourt North,Shootings,2014,30462,0,0.0
 Agincourt North,Shootings,2015,30164,0,0.0
 Agincourt North,Shootings,2016,29955,0,0.0
 Agincourt North,Shootings,2017,30353,1,3.294567
@@ -80,6 +81,7 @@ Agincourt South-Malvern West,Robbery,2017,25220,33,130.8485
 Agincourt South-Malvern West,Robbery,2018,25957,33,127.1333
 Agincourt South-Malvern West,Robbery,2019,26683,29,108.6834
 Agincourt South-Malvern West,Robbery,2020,27406,18,65.67905
+Agincourt South-Malvern West,Shootings,2014,23836,0,0.0
 Agincourt South-Malvern West,Shootings,2015,24136,1,4.143187999999999
 Agincourt South-Malvern West,Shootings,2016,24521,3,12.23441
 Agincourt South-Malvern West,Shootings,2017,25220,4,15.86043
@@ -127,6 +129,7 @@ Alderwood,Robbery,2017,12619,6,47.54735
 Alderwood,Robbery,2018,12844,8,62.28589
 Alderwood,Robbery,2019,13051,5,38.311240000000005
 Alderwood,Robbery,2020,13242,12,90.62075
+Alderwood,Shootings,2014,12368,2,16.17076
 Alderwood,Shootings,2015,12383,0,0.0
 Alderwood,Shootings,2016,12427,0,0.0
 Alderwood,Shootings,2017,12619,0,0.0
@@ -174,6 +177,7 @@ Annex,Robbery,2017,32407,67,206.7455
 Annex,Robbery,2018,66326,49,147.755
 Annex,Robbery,2019,33924,39,114.9629
 Annex,Robbery,2020,34680,44,126.8743
+Annex,Shootings,2014,31182,0,0.0
 Annex,Shootings,2015,31384,0,0.0
 Annex,Shootings,2016,31688,5,15.77884
 Annex,Shootings,2017,32407,1,3.085753
@@ -221,6 +225,7 @@ Banbury-Don Mills,Robbery,2017,29088,9,30.940590000000004
 Banbury-Don Mills,Robbery,2018,29795,7,23.493879999999997
 Banbury-Don Mills,Robbery,2019,30475,13,42.65792
 Banbury-Don Mills,Robbery,2020,31186,7,22.445970000000003
+Banbury-Don Mills,Shootings,2014,28135,1,3.554292
 Banbury-Don Mills,Shootings,2015,28226,0,0.0
 Banbury-Don Mills,Shootings,2016,28430,2,7.034822
 Banbury-Don Mills,Shootings,2017,29088,1,3.437844
@@ -268,6 +273,7 @@ Bathurst Manor,Robbery,2017,16666,14,84.00336
 Bathurst Manor,Robbery,2018,16982,10,58.88588000000001
 Bathurst Manor,Robbery,2019,17309,18,103.9921
 Bathurst Manor,Robbery,2020,17628,8,45.38235
+Bathurst Manor,Shootings,2014,16182,0,0.0
 Bathurst Manor,Shootings,2015,16237,0,0.0
 Bathurst Manor,Shootings,2016,16354,0,0.0
 Bathurst Manor,Shootings,2017,16666,0,0.0
@@ -315,6 +321,7 @@ Bay Street Corridor,Robbery,2017,28409,122,429.4414
 Bay Street Corridor,Robbery,2018,29859,127,425.3324
 Bay Street Corridor,Robbery,2019,31303,118,376.9607
 Bay Street Corridor,Robbery,2020,32790,82,250.0762
+Bay Street Corridor,Shootings,2014,24379,1,4.101891
 Bay Street Corridor,Shootings,2015,25640,5,19.50078
 Bay Street Corridor,Shootings,2016,27031,2,7.398911999999999
 Bay Street Corridor,Shootings,2017,28409,3,10.56003
@@ -362,6 +369,7 @@ Bayview Village,Robbery,2017,22798,8,35.0908
 Bayview Village,Robbery,2018,23462,5,21.31106
 Bayview Village,Robbery,2019,24122,15,62.1839
 Bayview Village,Robbery,2020,24799,18,72.58357
+Bayview Village,Shootings,2014,20646,0,0.0
 Bayview Village,Shootings,2015,21355,1,4.6827440000000005
 Bayview Village,Shootings,2016,22165,0,0.0
 Bayview Village,Shootings,2017,22798,0,0.0
@@ -409,6 +417,7 @@ Bayview Woods-Steeles,Robbery,2017,13616,5,36.7215
 Bayview Woods-Steeles,Robbery,2018,13757,8,58.15221
 Bayview Woods-Steeles,Robbery,2019,13892,6,43.19033
 Bayview Woods-Steeles,Robbery,2020,14020,1,7.132667999999999
+Bayview Woods-Steeles,Shootings,2014,13652,0,0.0
 Bayview Woods-Steeles,Shootings,2015,13540,0,0.0
 Bayview Woods-Steeles,Shootings,2016,13486,1,7.415097
 Bayview Woods-Steeles,Shootings,2017,13616,0,0.0
@@ -456,6 +465,7 @@ Bedford Park-Nortown,Robbery,2017,24382,16,65.62218
 Bedford Park-Nortown,Robbery,2018,24938,13,52.12928
 Bedford Park-Nortown,Robbery,2019,25483,14,54.938590000000005
 Bedford Park-Nortown,Robbery,2020,26015,17,65.34692
+Bedford Park-Nortown,Shootings,2014,23849,1,4.193048
 Bedford Park-Nortown,Shootings,2015,23813,0,0.0
 Bedford Park-Nortown,Shootings,2016,23860,1,4.191115
 Bedford Park-Nortown,Shootings,2017,24382,0,0.0
@@ -503,6 +513,7 @@ Beechborough-Greenbrook,Robbery,2017,6863,11,160.2798
 Beechborough-Greenbrook,Robbery,2018,6959,14,201.1783
 Beechborough-Greenbrook,Robbery,2019,7048,12,170.2611
 Beechborough-Greenbrook,Robbery,2020,7130,4,56.10098000000001
+Beechborough-Greenbrook,Shootings,2014,6768,1,14.77541
 Beechborough-Greenbrook,Shootings,2015,6755,3,44.41155
 Beechborough-Greenbrook,Shootings,2016,6784,0,0.0
 Beechborough-Greenbrook,Shootings,2017,6863,1,14.57089
@@ -550,6 +561,7 @@ Bendale,Robbery,2017,31365,83,264.6262
 Bendale,Robbery,2018,31834,48,150.7822
 Bendale,Robbery,2019,32324,43,133.0281
 Bendale,Robbery,2020,32770,22,67.13457
+Bendale,Shootings,2014,30105,2,6.643414
 Bendale,Shootings,2015,30481,1,3.280732
 Bendale,Shootings,2016,30918,5,16.17181
 Bendale,Shootings,2017,31365,6,19.1296
@@ -597,6 +609,7 @@ Birchcliffe-Cliffside,Robbery,2017,23208,14,60.32403000000001
 Birchcliffe-Cliffside,Robbery,2018,23564,21,89.119
 Birchcliffe-Cliffside,Robbery,2019,23879,31,129.8212
 Birchcliffe-Cliffside,Robbery,2020,24182,20,82.70615
+Birchcliffe-Cliffside,Shootings,2014,22743,0,0.0
 Birchcliffe-Cliffside,Shootings,2015,22806,0,0.0
 Birchcliffe-Cliffside,Shootings,2016,22909,0,0.0
 Birchcliffe-Cliffside,Shootings,2017,23208,0,0.0
@@ -644,6 +657,7 @@ Black Creek,Robbery,2017,22587,53,234.6483
 Black Creek,Robbery,2018,22813,31,135.8874
 Black Creek,Robbery,2019,23004,49,213.0064
 Black Creek,Robbery,2020,23206,25,107.7308
+Black Creek,Shootings,2014,22566,11,48.7459
 Black Creek,Shootings,2015,22439,11,49.02179
 Black Creek,Shootings,2016,22412,16,71.39033
 Black Creek,Shootings,2017,22587,12,53.12791
@@ -691,6 +705,7 @@ Blake-Jones,Robbery,2017,8053,14,173.8483
 Blake-Jones,Robbery,2018,8131,14,172.1805
 Blake-Jones,Robbery,2019,8215,9,109.5557
 Blake-Jones,Robbery,2020,8287,4,48.26837
+Blake-Jones,Shootings,2014,8005,1,12.49219
 Blake-Jones,Shootings,2015,7985,1,12.52348
 Blake-Jones,Shootings,2016,7983,4,50.10648
 Blake-Jones,Shootings,2017,8053,1,12.41773
@@ -738,6 +753,7 @@ Briar Hill-Belgravia,Robbery,2017,14899,23,154.3728
 Briar Hill-Belgravia,Robbery,2018,15089,25,165.6836
 Briar Hill-Belgravia,Robbery,2019,15275,30,196.3993
 Briar Hill-Belgravia,Robbery,2020,15448,10,64.7333
+Briar Hill-Belgravia,Shootings,2014,14747,1,6.781039999999999
 Briar Hill-Belgravia,Shootings,2015,14720,0,0.0
 Briar Hill-Belgravia,Shootings,2016,14723,1,6.7920940000000005
 Briar Hill-Belgravia,Shootings,2017,14899,5,33.5593
@@ -785,6 +801,7 @@ Bridle Path-Sunnybrook-York Mills,Robbery,2017,9851,1,10.15125
 Bridle Path-Sunnybrook-York Mills,Robbery,2018,10218,0,0.0
 Bridle Path-Sunnybrook-York Mills,Robbery,2019,10578,13,122.8966
 Bridle Path-Sunnybrook-York Mills,Robbery,2020,10942,8,73.11278
+Bridle Path-Sunnybrook-York Mills,Shootings,2014,9275,0,0.0
 Bridle Path-Sunnybrook-York Mills,Shootings,2015,9382,0,0.0
 Bridle Path-Sunnybrook-York Mills,Shootings,2016,9500,0,0.0
 Bridle Path-Sunnybrook-York Mills,Shootings,2017,9851,1,10.15125
@@ -832,6 +849,7 @@ Broadview North,Robbery,2017,11994,5,41.68751
 Broadview North,Robbery,2018,12124,7,57.73672
 Broadview North,Robbery,2019,12255,5,40.79967
 Broadview North,Robbery,2020,12372,3,24.2483
+Broadview North,Shootings,2014,11917,0,0.0
 Broadview North,Shootings,2015,11881,0,0.0
 Broadview North,Shootings,2016,11885,1,8.413967
 Broadview North,Shootings,2017,11994,1,8.337502
@@ -879,6 +897,7 @@ Brookhaven-Amesbury,Robbery,2017,18448,19,102.9922
 Brookhaven-Amesbury,Robbery,2018,18607,20,107.4864
 Brookhaven-Amesbury,Robbery,2019,18746,19,101.355
 Brookhaven-Amesbury,Robbery,2020,18892,16,84.69193
+Brookhaven-Amesbury,Shootings,2014,18349,1,5.449888
 Brookhaven-Amesbury,Shootings,2015,18299,2,10.92956
 Brookhaven-Amesbury,Shootings,2016,18328,3,16.3684
 Brookhaven-Amesbury,Shootings,2017,18448,7,37.94449
@@ -926,6 +945,7 @@ Cabbagetown-South St. James Town,Robbery,2017,12221,45,368.2186
 Cabbagetown-South St. James Town,Robbery,2018,12365,34,274.9697
 Cabbagetown-South St. James Town,Robbery,2019,12512,17,135.8696
 Cabbagetown-South St. James Town,Robbery,2020,12655,16,126.4322
+Cabbagetown-South St. James Town,Shootings,2014,12267,1,8.151953
 Cabbagetown-South St. James Town,Shootings,2015,12157,0,0.0
 Cabbagetown-South St. James Town,Shootings,2016,12088,0,0.0
 Cabbagetown-South St. James Town,Shootings,2017,12221,1,8.182636
@@ -973,6 +993,7 @@ Caledonia-Fairbank,Robbery,2017,10398,9,86.55511
 Caledonia-Fairbank,Robbery,2018,10513,9,85.60829
 Caledonia-Fairbank,Robbery,2019,10622,15,141.2163
 Caledonia-Fairbank,Robbery,2020,10729,8,74.56426
+Caledonia-Fairbank,Shootings,2014,10252,0,0.0
 Caledonia-Fairbank,Shootings,2015,10258,1,9.748489
 Caledonia-Fairbank,Shootings,2016,10292,1,9.716285
 Caledonia-Fairbank,Shootings,2017,10398,1,9.617234
@@ -1020,6 +1041,7 @@ Casa Loma,Robbery,2017,11544,10,86.62508000000001
 Casa Loma,Robbery,2018,11817,6,50.77431
 Casa Loma,Robbery,2019,12071,8,66.27454
 Casa Loma,Robbery,2020,12334,3,24.32301
+Casa Loma,Shootings,2014,11114,0,0.0
 Casa Loma,Shootings,2015,11190,0,0.0
 Casa Loma,Shootings,2016,11300,0,0.0
 Casa Loma,Shootings,2017,11544,0,0.0
@@ -1067,6 +1089,7 @@ Centennial Scarborough,Robbery,2017,13962,7,50.13609
 Centennial Scarborough,Robbery,2018,14205,6,42.23865
 Centennial Scarborough,Robbery,2019,14437,1,6.926647
 Centennial Scarborough,Robbery,2020,14672,3,20.44711
+Centennial Scarborough,Shootings,2014,13624,0,0.0
 Centennial Scarborough,Shootings,2015,13670,0,0.0
 Centennial Scarborough,Shootings,2016,13736,2,14.56028
 Centennial Scarborough,Shootings,2017,13962,0,0.0
@@ -1114,6 +1137,7 @@ Church-Yonge Corridor,Robbery,2017,34384,151,439.1577
 Church-Yonge Corridor,Robbery,2018,72010,189,524.9271
 Church-Yonge Corridor,Robbery,2019,37617,149,396.0975
 Church-Yonge Corridor,Robbery,2020,39279,138,351.3328
+Church-Yonge Corridor,Shootings,2014,31687,0,0.0
 Church-Yonge Corridor,Shootings,2015,32174,3,9.324299
 Church-Yonge Corridor,Shootings,2016,32849,2,6.088465
 Church-Yonge Corridor,Shootings,2017,34384,0,0.0
@@ -1161,6 +1185,7 @@ Clairlea-Birchmount,Robbery,2017,28186,56,198.6802
 Clairlea-Birchmount,Robbery,2018,85716,27,94.49811
 Clairlea-Birchmount,Robbery,2019,28946,35,120.9148
 Clairlea-Birchmount,Robbery,2020,29302,30,102.3821
+Clairlea-Birchmount,Shootings,2014,26955,3,11.12966
 Clairlea-Birchmount,Shootings,2015,27344,5,18.28555
 Clairlea-Birchmount,Shootings,2016,27850,0,0.0
 Clairlea-Birchmount,Shootings,2017,28186,0,0.0
@@ -1208,6 +1233,7 @@ Clanton Park,Robbery,2017,17433,13,74.57121
 Clanton Park,Robbery,2018,17876,11,61.53502
 Clanton Park,Robbery,2019,18303,12,65.56302
 Clanton Park,Robbery,2020,18742,16,85.36976
+Clanton Park,Shootings,2014,16262,1,6.149305
 Clanton Park,Shootings,2015,16607,2,12.04311
 Clanton Park,Shootings,2016,17010,0,0.0
 Clanton Park,Shootings,2017,17433,1,5.736248000000001
@@ -1255,6 +1281,7 @@ Cliffcrest,Robbery,2017,16703,33,197.5693
 Cliffcrest,Robbery,2018,17051,15,87.97138000000001
 Cliffcrest,Robbery,2019,17386,29,166.8009
 Cliffcrest,Robbery,2020,17715,23,129.8335
+Cliffcrest,Shootings,2014,16285,0,0.0
 Cliffcrest,Shootings,2015,16314,2,12.25941
 Cliffcrest,Shootings,2016,16379,0,0.0
 Cliffcrest,Shootings,2017,16703,0,0.0
@@ -1302,6 +1329,7 @@ Corso Italia-Davenport,Robbery,2017,14760,32,216.8022
 Corso Italia-Davenport,Robbery,2018,14898,20,134.2462
 Corso Italia-Davenport,Robbery,2019,15028,33,219.5901
 Corso Italia-Davenport,Robbery,2020,15139,12,79.26547
+Corso Italia-Davenport,Shootings,2014,14471,0,0.0
 Corso Italia-Davenport,Shootings,2015,14543,0,0.0
 Corso Italia-Davenport,Shootings,2016,14635,1,6.832935000000001
 Corso Italia-Davenport,Shootings,2017,14760,2,13.55014
@@ -1349,6 +1377,7 @@ Danforth,Robbery,2017,10073,35,347.4635
 Danforth,Robbery,2018,10171,38,373.6112
 Danforth,Robbery,2019,10271,26,253.1399
 Danforth,Robbery,2020,10353,19,183.5217
+Danforth,Shootings,2014,9890,0,0.0
 Danforth,Shootings,2015,9923,0,0.0
 Danforth,Shootings,2016,9981,0,0.0
 Danforth,Shootings,2017,10073,1,9.927529
@@ -1396,6 +1425,7 @@ Danforth East York,Robbery,2017,17889,8,44.72022
 Danforth East York,Robbery,2018,18084,10,55.2975
 Danforth East York,Robbery,2019,18258,8,43.81641
 Danforth East York,Robbery,2020,18427,9,48.84137
+Danforth East York,Shootings,2014,17529,0,0.0
 Danforth East York,Shootings,2015,17614,0,0.0
 Danforth East York,Shootings,2016,17718,0,0.0
 Danforth East York,Shootings,2017,17889,2,11.18005
@@ -1443,6 +1473,7 @@ Don Valley Village,Robbery,2017,28249,19,67.25901999999999
 Don Valley Village,Robbery,2018,28652,35,122.1555
 Don Valley Village,Robbery,2019,29022,34,117.1525
 Don Valley Village,Robbery,2020,29406,23,78.21533000000001
+Don Valley Village,Shootings,2014,27793,0,0.0
 Don Valley Village,Shootings,2015,27794,1,3.597899
 Don Valley Village,Shootings,2016,27908,1,3.5832019999999996
 Don Valley Village,Shootings,2017,28249,1,3.5399480000000003
@@ -1490,6 +1521,7 @@ Dorset Park,Robbery,2017,26055,35,134.3312
 Dorset Park,Robbery,2018,26402,37,140.1409
 Dorset Park,Robbery,2019,26729,38,142.1677
 Dorset Park,Robbery,2020,27051,24,88.72131
+Dorset Park,Shootings,2014,25526,1,3.917574
 Dorset Park,Shootings,2015,25599,4,15.62561
 Dorset Park,Shootings,2016,25758,10,38.82289
 Dorset Park,Shootings,2017,26055,7,26.86625
@@ -1537,6 +1569,7 @@ Dovercourt-Wallace Emerson-Junction,Robbery,2017,38608,70,181.3096
 Dovercourt-Wallace Emerson-Junction,Robbery,2018,39224,58,147.8687
 Dovercourt-Wallace Emerson-Junction,Robbery,2019,39811,51,128.1053
 Dovercourt-Wallace Emerson-Junction,Robbery,2020,40355,39,96.6423
+Dovercourt-Wallace Emerson-Junction,Shootings,2014,37271,0,0.0
 Dovercourt-Wallace Emerson-Junction,Shootings,2015,37618,2,5.316604
 Dovercourt-Wallace Emerson-Junction,Shootings,2016,38069,1,2.626809
 Dovercourt-Wallace Emerson-Junction,Shootings,2017,38608,3,7.770410000000001
@@ -1584,6 +1617,7 @@ Downsview-Roding-CFB,Robbery,2017,36830,63,171.0562
 Downsview-Roding-CFB,Robbery,2018,37553,71,189.0661
 Downsview-Roding-CFB,Robbery,2019,38282,62,161.95600000000002
 Downsview-Roding-CFB,Robbery,2020,38981,55,141.0944
+Downsview-Roding-CFB,Shootings,2014,36012,8,22.21482
 Downsview-Roding-CFB,Shootings,2015,36044,8,22.1951
 Downsview-Roding-CFB,Shootings,2016,36153,8,22.12818
 Downsview-Roding-CFB,Shootings,2017,36830,12,32.58213
@@ -1631,6 +1665,7 @@ Dufferin Grove,Robbery,2017,12406,9,72.54554
 Dufferin Grove,Robbery,2018,12574,18,143.1525
 Dufferin Grove,Robbery,2019,12720,29,227.9874
 Dufferin Grove,Robbery,2020,12858,19,147.7679
+Dufferin Grove,Shootings,2014,12130,0,0.0
 Dufferin Grove,Shootings,2015,12190,0,0.0
 Dufferin Grove,Shootings,2016,12273,2,16.29593
 Dufferin Grove,Shootings,2017,12406,3,24.18185
@@ -1678,6 +1713,7 @@ East End-Danforth,Robbery,2017,22311,38,170.3196
 East End-Danforth,Robbery,2018,22594,32,141.6305
 East End-Danforth,Robbery,2019,22862,27,118.0999
 East End-Danforth,Robbery,2020,23112,27,116.8224
+East End-Danforth,Shootings,2014,21852,1,4.57624
 East End-Danforth,Shootings,2015,21914,0,0.0
 East End-Danforth,Shootings,2016,22062,2,9.065361
 East End-Danforth,Shootings,2017,22311,2,8.964188
@@ -1725,6 +1761,7 @@ Edenbridge-Humber Valley,Robbery,2017,16366,3,18.330679999999997
 Edenbridge-Humber Valley,Robbery,2018,16788,5,29.78318
 Edenbridge-Humber Valley,Robbery,2019,17207,3,17.43476
 Edenbridge-Humber Valley,Robbery,2020,17619,8,45.40553
+Edenbridge-Humber Valley,Shootings,2014,15729,0,0.0
 Edenbridge-Humber Valley,Shootings,2015,15829,0,0.0
 Edenbridge-Humber Valley,Shootings,2016,15968,3,18.78757
 Edenbridge-Humber Valley,Shootings,2017,16366,0,0.0
@@ -1772,6 +1809,7 @@ Eglinton East,Robbery,2017,23799,37,155.4687
 Eglinton East,Robbery,2018,24160,36,149.0066
 Eglinton East,Robbery,2019,24519,36,146.8249
 Eglinton East,Robbery,2020,24885,23,92.42516
+Eglinton East,Shootings,2014,23504,1,4.254595
 Eglinton East,Shootings,2015,23435,2,8.534244000000001
 Eglinton East,Shootings,2016,23460,3,12.78772
 Eglinton East,Shootings,2017,23799,10,42.01857
@@ -1819,6 +1857,7 @@ Elms-Old Rexdale,Robbery,2017,9818,20,203.7075
 Elms-Old Rexdale,Robbery,2018,9897,13,131.3529
 Elms-Old Rexdale,Robbery,2019,9968,15,150.4815
 Elms-Old Rexdale,Robbery,2020,10045,7,69.68641
+Elms-Old Rexdale,Shootings,2014,9789,1,10.21555
 Elms-Old Rexdale,Shootings,2015,9754,4,41.00882
 Elms-Old Rexdale,Shootings,2016,9746,3,30.78186
 Elms-Old Rexdale,Shootings,2017,9818,6,61.11224
@@ -1866,6 +1905,7 @@ Englemount-Lawrence,Robbery,2017,23534,23,97.73094
 Englemount-Lawrence,Robbery,2018,24059,10,41.56449
 Englemount-Lawrence,Robbery,2019,24582,15,61.02026
 Englemount-Lawrence,Robbery,2020,25089,24,95.65945
+Englemount-Lawrence,Shootings,2014,22912,3,13.09358
 Englemount-Lawrence,Shootings,2015,22938,6,26.15747
 Englemount-Lawrence,Shootings,2016,23026,14,60.800830000000005
 Englemount-Lawrence,Shootings,2017,23534,4,16.99669
@@ -1913,6 +1953,7 @@ Eringate-Centennial-West Deane,Robbery,2017,19281,18,93.35616
 Eringate-Centennial-West Deane,Robbery,2018,39046,11,56.3438
 Eringate-Centennial-West Deane,Robbery,2019,19718,11,55.78659
 Eringate-Centennial-West Deane,Robbery,2020,19924,19,95.36237
+Eringate-Centennial-West Deane,Shootings,2014,19190,0,0.0
 Eringate-Centennial-West Deane,Shootings,2015,19120,4,20.9205
 Eringate-Centennial-West Deane,Shootings,2016,19096,3,15.7101
 Eringate-Centennial-West Deane,Shootings,2017,19281,3,15.55936
@@ -1960,6 +2001,7 @@ Etobicoke West Mall,Robbery,2017,12421,5,40.25441
 Etobicoke West Mall,Robbery,2018,12639,4,31.64807
 Etobicoke West Mall,Robbery,2019,12850,11,85.60311
 Etobicoke West Mall,Robbery,2020,13072,10,76.49939
+Etobicoke West Mall,Shootings,2014,11864,1,8.428861
 Etobicoke West Mall,Shootings,2015,12019,4,33.280640000000005
 Etobicoke West Mall,Shootings,2016,12216,2,16.37197
 Etobicoke West Mall,Shootings,2017,12421,1,8.050881
@@ -2007,6 +2049,7 @@ Flemingdon Park,Robbery,2017,22836,20,87.58100999999999
 Flemingdon Park,Robbery,2018,23074,16,69.34212
 Flemingdon Park,Robbery,2019,23279,13,55.84432
 Flemingdon Park,Robbery,2020,23505,5,21.272070000000003
+Flemingdon Park,Shootings,2014,22570,5,22.1533
 Flemingdon Park,Shootings,2015,22563,5,22.16017
 Flemingdon Park,Shootings,2016,22649,8,35.32165
 Flemingdon Park,Shootings,2017,22836,5,21.89525
@@ -2054,6 +2097,7 @@ Forest Hill North,Robbery,2017,13279,9,67.77619
 Forest Hill North,Robbery,2018,13388,16,119.51
 Forest Hill North,Robbery,2019,13487,22,163.12
 Forest Hill North,Robbery,2020,13588,16,117.751
+Forest Hill North,Shootings,2014,13065,0,0.0
 Forest Hill North,Shootings,2015,13097,0,0.0
 Forest Hill North,Shootings,2016,13182,0,0.0
 Forest Hill North,Shootings,2017,13279,0,0.0
@@ -2101,6 +2145,7 @@ Forest Hill South,Robbery,2017,11395,5,43.878890000000006
 Forest Hill South,Robbery,2018,11747,8,68.10249
 Forest Hill South,Robbery,2019,12109,15,123.8748
 Forest Hill South,Robbery,2020,12450,5,40.16064
+Forest Hill South,Shootings,2014,11135,0,0.0
 Forest Hill South,Shootings,2015,11074,0,0.0
 Forest Hill South,Shootings,2016,11050,0,0.0
 Forest Hill South,Shootings,2017,11395,1,8.775779
@@ -2148,6 +2193,7 @@ Glenfield-Jane Heights,Robbery,2017,31781,51,160.4732
 Glenfield-Jane Heights,Robbery,2018,32222,48,148.9665
 Glenfield-Jane Heights,Robbery,2019,32621,47,144.079
 Glenfield-Jane Heights,Robbery,2020,33031,49,148.3455
+Glenfield-Jane Heights,Shootings,2014,31794,8,25.16198
 Glenfield-Jane Heights,Shootings,2015,31550,16,50.71315
 Glenfield-Jane Heights,Shootings,2016,31398,21,66.88324
 Glenfield-Jane Heights,Shootings,2017,31781,20,62.93068
@@ -2195,6 +2241,7 @@ Greenwood-Coxwell,Robbery,2017,15052,20,132.8727
 Greenwood-Coxwell,Robbery,2018,15208,19,124.9342
 Greenwood-Coxwell,Robbery,2019,15342,8,52.14444
 Greenwood-Coxwell,Robbery,2020,15470,21,135.7466
+Greenwood-Coxwell,Shootings,2014,14785,2,13.527220000000002
 Greenwood-Coxwell,Shootings,2015,14833,2,13.48345
 Greenwood-Coxwell,Shootings,2016,14921,2,13.40393
 Greenwood-Coxwell,Shootings,2017,15052,1,6.643635000000001
@@ -2242,6 +2289,7 @@ Guildwood,Robbery,2017,10281,10,97.2668
 Guildwood,Robbery,2018,10419,5,47.98925
 Guildwood,Robbery,2019,10546,7,66.37588000000001
 Guildwood,Robbery,2020,10679,3,28.09252
+Guildwood,Shootings,2014,10122,0,0.0
 Guildwood,Shootings,2015,10126,0,0.0
 Guildwood,Shootings,2016,10160,0,0.0
 Guildwood,Shootings,2017,10281,0,0.0
@@ -2289,6 +2337,7 @@ Henry Farm,Robbery,2017,17860,12,67.18925
 Henry Farm,Robbery,2018,19408,9,46.37263
 Henry Farm,Robbery,2019,20958,6,28.62868
 Henry Farm,Robbery,2020,22545,6,26.61344
+Henry Farm,Shootings,2014,14607,1,6.846033
 Henry Farm,Shootings,2015,15440,5,32.38342
 Henry Farm,Shootings,2016,16364,0,0.0
 Henry Farm,Shootings,2017,17860,1,5.5991040000000005
@@ -2336,6 +2385,7 @@ High Park North,Robbery,2017,23350,37,158.4582
 High Park North,Robbery,2018,23762,26,109.4184
 High Park North,Robbery,2019,24160,16,66.22516999999999
 High Park North,Robbery,2020,24557,18,73.29885999999999
+High Park North,Shootings,2014,22644,0,0.0
 High Park North,Shootings,2015,22760,0,0.0
 High Park North,Shootings,2016,22980,0,0.0
 High Park North,Shootings,2017,23350,0,0.0
@@ -2383,6 +2433,7 @@ High Park-Swansea,Robbery,2017,25148,21,83.50565
 High Park-Swansea,Robbery,2018,25605,12,46.865840000000006
 High Park-Swansea,Robbery,2019,26046,22,84.46594
 High Park-Swansea,Robbery,2020,26494,10,37.7444
+High Park-Swansea,Shootings,2014,23852,0,0.0
 High Park-Swansea,Shootings,2015,24257,1,4.122521
 High Park-Swansea,Shootings,2016,24721,5,20.225720000000003
 High Park-Swansea,Shootings,2017,25148,5,19.8823
@@ -2430,6 +2481,7 @@ Highland Creek,Robbery,2017,13139,18,136.9967
 Highland Creek,Robbery,2018,13405,5,37.29951
 Highland Creek,Robbery,2019,13694,14,102.2346
 Highland Creek,Robbery,2020,13943,2,14.344120000000002
+Highland Creek,Shootings,2014,13121,0,0.0
 Highland Creek,Shootings,2015,12980,2,15.408320000000002
 Highland Creek,Shootings,2016,12867,0,0.0
 Highland Creek,Shootings,2017,13139,1,7.610929
@@ -2477,6 +2529,7 @@ Hillcrest Village,Robbery,2017,17622,25,141.8681
 Hillcrest Village,Robbery,2018,17875,18,100.6993
 Hillcrest Village,Robbery,2019,18117,17,93.83452
 Hillcrest Village,Robbery,2020,18349,14,76.29844
+Hillcrest Village,Shootings,2014,17696,1,5.650995
 Hillcrest Village,Shootings,2015,17513,0,0.0
 Hillcrest Village,Shootings,2016,17383,0,0.0
 Hillcrest Village,Shootings,2017,17622,0,0.0
@@ -2524,6 +2577,7 @@ Humber Heights-Westmount,Robbery,2017,11483,5,43.54263
 Humber Heights-Westmount,Robbery,2018,11761,5,42.51339
 Humber Heights-Westmount,Robbery,2019,12048,4,33.20053
 Humber Heights-Westmount,Robbery,2020,12325,2,16.22718
+Humber Heights-Westmount,Shootings,2014,11098,1,9.010633
 Humber Heights-Westmount,Shootings,2015,11148,4,35.88087
 Humber Heights-Westmount,Shootings,2016,11217,6,53.49024
 Humber Heights-Westmount,Shootings,2017,11483,3,26.12558
@@ -2571,6 +2625,7 @@ Humber Summit,Robbery,2017,12960,27,208.3333
 Humber Summit,Robbery,2018,13133,34,258.8898
 Humber Summit,Robbery,2019,13300,28,210.5263
 Humber Summit,Robbery,2020,13458,25,185.7631
+Humber Summit,Shootings,2014,12843,1,7.786343
 Humber Summit,Shootings,2015,12810,6,46.83841
 Humber Summit,Shootings,2016,12795,15,117.2333
 Humber Summit,Shootings,2017,12960,9,69.44444
@@ -2618,6 +2673,7 @@ Humbermede,Robbery,2017,16224,34,209.5661
 Humbermede,Robbery,2018,16422,27,164.4136
 Humbermede,Robbery,2019,16602,27,162.631
 Humbermede,Robbery,2020,16794,14,83.36310999999999
+Humbermede,Shootings,2014,16186,2,12.35636
 Humbermede,Shootings,2015,16087,8,49.7296
 Humbermede,Shootings,2016,16045,4,24.929879999999997
 Humbermede,Shootings,2017,16224,6,36.98225
@@ -2665,6 +2721,7 @@ Humewood-Cedarvale,Robbery,2017,15104,7,46.34534
 Humewood-Cedarvale,Robbery,2018,15359,4,26.04336
 Humewood-Cedarvale,Robbery,2019,15610,10,64.0615
 Humewood-Cedarvale,Robbery,2020,15854,6,37.84534
+Humewood-Cedarvale,Shootings,2014,14776,0,0.0
 Humewood-Cedarvale,Shootings,2015,14802,0,0.0
 Humewood-Cedarvale,Shootings,2016,14864,0,0.0
 Humewood-Cedarvale,Shootings,2017,15104,1,6.620763
@@ -2712,6 +2769,7 @@ Ionview,Robbery,2017,14156,14,98.89799
 Ionview,Robbery,2018,14250,8,56.14035
 Ionview,Robbery,2019,14332,12,83.72872
 Ionview,Robbery,2020,14407,2,13.88214
+Ionview,Shootings,2014,13862,1,7.213966
 Ionview,Shootings,2015,13957,0,0.0
 Ionview,Shootings,2016,14089,0,0.0
 Ionview,Shootings,2017,14156,0,0.0
@@ -2759,6 +2817,7 @@ Islington-City Centre West,Robbery,2017,46902,70,149.2474
 Islington-City Centre West,Robbery,2018,96868,35,72.26328000000001
 Islington-City Centre West,Robbery,2019,49943,36,72.08218000000001
 Islington-City Centre West,Robbery,2020,51481,35,67.98624000000001
+Islington-City Centre West,Shootings,2014,43061,1,2.322287
 Islington-City Centre West,Shootings,2015,44160,3,6.7934779999999995
 Islington-City Centre West,Shootings,2016,45465,5,10.99747
 Islington-City Centre West,Shootings,2017,46902,3,6.396316000000001
@@ -2806,6 +2865,7 @@ Junction Area,Robbery,2017,15062,17,112.8668
 Junction Area,Robbery,2018,15263,25,163.7948
 Junction Area,Robbery,2019,15447,15,97.10623
 Junction Area,Robbery,2020,15623,13,83.21065
+Junction Area,Shootings,2014,14754,1,6.777823
 Junction Area,Shootings,2015,14807,1,6.753562
 Junction Area,Shootings,2016,14893,1,6.714564
 Junction Area,Shootings,2017,15062,0,0.0
@@ -2853,6 +2913,7 @@ Keelesdale-Eglinton West,Robbery,2017,11568,22,190.1798
 Keelesdale-Eglinton West,Robbery,2018,11730,19,161.9778
 Keelesdale-Eglinton West,Robbery,2019,11897,11,92.46028
 Keelesdale-Eglinton West,Robbery,2020,12050,11,91.28631
+Keelesdale-Eglinton West,Shootings,2014,11244,2,17.78726
 Keelesdale-Eglinton West,Shootings,2015,11307,6,53.06446999999999
 Keelesdale-Eglinton West,Shootings,2016,11408,2,17.53156
 Keelesdale-Eglinton West,Shootings,2017,11568,3,25.93361
@@ -2900,6 +2961,7 @@ Kennedy Park,Robbery,2017,17831,56,314.0598
 Kennedy Park,Robbery,2018,36062,32,177.4721
 Kennedy Park,Robbery,2019,18223,25,137.1893
 Kennedy Park,Robbery,2020,18407,25,135.8179
+Kennedy Park,Shootings,2014,17630,3,17.01645
 Kennedy Park,Shootings,2015,17601,0,0.0
 Kennedy Park,Shootings,2016,17646,2,11.33401
 Kennedy Park,Shootings,2017,17831,4,22.43284
@@ -2947,6 +3009,7 @@ Kensington-Chinatown,Robbery,2017,19296,100,518.2421
 Kensington-Chinatown,Robbery,2018,19938,75,376.1661
 Kensington-Chinatown,Robbery,2019,20565,51,247.9942
 Kensington-Chinatown,Robbery,2020,21196,38,179.2791
+Kensington-Chinatown,Shootings,2014,18952,2,10.55298
 Kensington-Chinatown,Shootings,2015,18791,4,21.28679
 Kensington-Chinatown,Shootings,2016,18691,5,26.750840000000004
 Kensington-Chinatown,Shootings,2017,19296,9,46.64179
@@ -2994,6 +3057,7 @@ Kingsview Village-The Westway,Robbery,2017,22810,14,61.37659
 Kingsview Village-The Westway,Robbery,2018,22988,18,78.30171999999999
 Kingsview Village-The Westway,Robbery,2019,23153,15,64.78641999999999
 Kingsview Village-The Westway,Robbery,2020,23318,7,30.01973
+Kingsview Village-The Westway,Shootings,2014,22556,3,13.30023
 Kingsview Village-The Westway,Shootings,2015,22562,7,31.02562
 Kingsview Village-The Westway,Shootings,2016,22669,14,61.75835
 Kingsview Village-The Westway,Shootings,2017,22810,9,39.45638
@@ -3041,6 +3105,7 @@ Kingsway South,Robbery,2017,9695,15,154.7189
 Kingsway South,Robbery,2018,9918,16,161.3228
 Kingsway South,Robbery,2019,10119,13,128.4712
 Kingsway South,Robbery,2020,10327,4,38.73342
+Kingsway South,Shootings,2014,9459,0,0.0
 Kingsway South,Shootings,2015,9463,0,0.0
 Kingsway South,Shootings,2016,9498,0,0.0
 Kingsway South,Shootings,2017,9695,0,0.0
@@ -3088,6 +3153,7 @@ L'Amoreaux,Robbery,2017,46047,39,84.69606999999999
 L'Amoreaux,Robbery,2018,46911,39,83.13615
 L'Amoreaux,Robbery,2019,47713,60,125.7519
 L'Amoreaux,Robbery,2020,48519,28,57.70935
+L'Amoreaux,Shootings,2014,45699,2,4.376462999999999
 L'Amoreaux,Shootings,2015,45414,2,4.403928
 L'Amoreaux,Shootings,2016,45273,7,15.46175
 L'Amoreaux,Shootings,2017,46047,11,23.88864
@@ -3135,6 +3201,7 @@ Lambton Baby Point,Robbery,2017,8273,2,24.17503
 Lambton Baby Point,Robbery,2018,8326,1,12.01057
 Lambton Baby Point,Robbery,2019,8383,4,47.71561
 Lambton Baby Point,Robbery,2020,8433,1,11.85818
+Lambton Baby Point,Shootings,2014,8198,1,12.1981
 Lambton Baby Point,Shootings,2015,8194,3,36.61216
 Lambton Baby Point,Shootings,2016,8216,0,0.0
 Lambton Baby Point,Shootings,2017,8273,1,12.08751
@@ -3182,6 +3249,7 @@ Lansing-Westgate,Robbery,2017,17054,14,82.09218
 Lansing-Westgate,Robbery,2018,17429,32,183.602
 Lansing-Westgate,Robbery,2019,17785,12,67.47259
 Lansing-Westgate,Robbery,2020,18146,11,60.61942
+Lansing-Westgate,Shootings,2014,16086,0,0.0
 Lansing-Westgate,Shootings,2015,16376,0,0.0
 Lansing-Westgate,Shootings,2016,16722,1,5.9801459999999995
 Lansing-Westgate,Shootings,2017,17054,0,0.0
@@ -3229,6 +3297,7 @@ Lawrence Park North,Robbery,2017,15194,6,39.48927
 Lawrence Park North,Robbery,2018,15391,2,12.99461
 Lawrence Park North,Robbery,2019,15575,7,44.94382
 Lawrence Park North,Robbery,2020,15751,12,76.18564
+Lawrence Park North,Shootings,2014,14990,1,6.671114
 Lawrence Park North,Shootings,2015,14984,0,0.0
 Lawrence Park North,Shootings,2016,15013,0,0.0
 Lawrence Park North,Shootings,2017,15194,0,0.0
@@ -3276,6 +3345,7 @@ Lawrence Park South,Robbery,2017,15848,5,31.54972
 Lawrence Park South,Robbery,2018,16095,5,31.06555
 Lawrence Park South,Robbery,2019,16343,15,91.78242
 Lawrence Park South,Robbery,2020,16585,12,72.35454
+Lawrence Park South,Shootings,2014,15576,0,0.0
 Lawrence Park South,Shootings,2015,15580,0,0.0
 Lawrence Park South,Shootings,2016,15605,0,0.0
 Lawrence Park South,Shootings,2017,15848,0,0.0
@@ -3323,6 +3393,7 @@ Leaside-Bennington,Robbery,2017,17602,12,68.17407
 Leaside-Bennington,Robbery,2018,17948,8,44.57321
 Leaside-Bennington,Robbery,2019,18290,2,10.93494
 Leaside-Bennington,Robbery,2020,18627,7,37.57986
+Leaside-Bennington,Shootings,2014,17349,0,0.0
 Leaside-Bennington,Shootings,2015,17286,0,0.0
 Leaside-Bennington,Shootings,2016,17265,0,0.0
 Leaside-Bennington,Shootings,2017,17602,0,0.0
@@ -3370,6 +3441,7 @@ Little Portugal,Robbery,2017,16624,13,78.2002
 Little Portugal,Robbery,2018,17003,12,70.57578000000001
 Little Portugal,Robbery,2019,17381,9,51.78068
 Little Portugal,Robbery,2020,17741,9,50.72995
+Little Portugal,Shootings,2014,14822,0,0.0
 Little Portugal,Shootings,2015,15532,1,6.438321
 Little Portugal,Shootings,2016,16269,0,0.0
 Little Portugal,Shootings,2017,16624,0,0.0
@@ -3417,6 +3489,7 @@ Long Branch,Robbery,2017,10696,13,121.5408
 Long Branch,Robbery,2018,10988,10,91.00837
 Long Branch,Robbery,2019,11278,30,266.0046
 Long Branch,Robbery,2020,11564,16,138.3604
+Long Branch,Shootings,2014,10241,0,0.0
 Long Branch,Shootings,2015,10319,0,0.0
 Long Branch,Shootings,2016,10421,0,0.0
 Long Branch,Shootings,2017,10696,3,28.04787
@@ -3464,6 +3537,7 @@ Malvern,Robbery,2017,45742,63,137.72899999999998
 Malvern,Robbery,2018,92754,51,109.9683
 Malvern,Robbery,2019,46969,43,91.54974
 Malvern,Robbery,2020,47548,24,50.47531
+Malvern,Shootings,2014,45752,4,8.742787
 Malvern,Shootings,2015,45410,9,19.81942
 Malvern,Shootings,2016,45181,10,22.1332
 Malvern,Shootings,2017,45742,10,21.86175
@@ -3511,6 +3585,7 @@ Maple Leaf,Robbery,2017,10545,2,18.96634
 Maple Leaf,Robbery,2018,10688,6,56.137730000000005
 Maple Leaf,Robbery,2019,10811,4,36.99935
 Maple Leaf,Robbery,2020,10947,2,18.26985
+Maple Leaf,Shootings,2014,10451,0,0.0
 Maple Leaf,Shootings,2015,10411,2,19.21045
 Maple Leaf,Shootings,2016,10413,0,0.0
 Maple Leaf,Shootings,2017,10545,1,9.483168
@@ -3558,6 +3633,7 @@ Markland Wood,Robbery,2017,10895,9,82.6067
 Markland Wood,Robbery,2018,10987,4,36.406659999999995
 Markland Wood,Robbery,2019,11061,13,117.5301
 Markland Wood,Robbery,2020,11146,16,143.5493
+Markland Wood,Shootings,2014,10770,0,0.0
 Markland Wood,Shootings,2015,10772,0,0.0
 Markland Wood,Shootings,2016,10815,0,0.0
 Markland Wood,Shootings,2017,10895,0,0.0
@@ -3605,6 +3681,7 @@ Milliken,Robbery,2017,27816,31,111.4466
 Milliken,Robbery,2018,28268,20,70.75138000000001
 Milliken,Robbery,2019,28742,39,135.6899
 Milliken,Robbery,2020,29166,34,116.5741
+Milliken,Shootings,2014,27671,0,0.0
 Milliken,Shootings,2015,27503,2,7.271934
 Milliken,Shootings,2016,27384,1,3.651767
 Milliken,Shootings,2017,27816,0,0.0
@@ -3652,6 +3729,7 @@ Mimico (includes Humber Bay Shores),Robbery,2017,36044,23,63.8109
 Mimico (includes Humber Bay Shores),Robbery,2018,36950,29,78.48444
 Mimico (includes Humber Bay Shores),Robbery,2019,37839,17,44.92719
 Mimico (includes Humber Bay Shores),Robbery,2020,38739,11,28.395159999999997
+Mimico (includes Humber Bay Shores),Shootings,2014,32103,0,0.0
 Mimico (includes Humber Bay Shores),Shootings,2015,33588,3,8.931761999999999
 Mimico (includes Humber Bay Shores),Shootings,2016,35223,1,2.839054
 Mimico (includes Humber Bay Shores),Shootings,2017,36044,1,2.774387
@@ -3699,6 +3777,7 @@ Morningside,Robbery,2017,18214,19,104.3154
 Morningside,Robbery,2018,18423,14,75.99197
 Morningside,Robbery,2019,18658,17,91.11373
 Morningside,Robbery,2020,18859,7,37.11756
+Morningside,Shootings,2014,18071,2,11.06746
 Morningside,Shootings,2015,18001,0,0.0
 Morningside,Shootings,2016,18002,1,5.554938
 Morningside,Shootings,2017,18214,1,5.490282
@@ -3746,6 +3825,7 @@ Moss Park,Robbery,2017,22013,93,422.4776
 Moss Park,Robbery,2018,30193,158,697.7258
 Moss Park,Robbery,2019,23266,139,597.4383
 Moss Park,Robbery,2020,23905,130,543.8193
+Moss Park,Shootings,2014,19686,3,15.23926
 Moss Park,Shootings,2015,20507,4,19.50554
 Moss Park,Shootings,2016,21426,8,37.33781
 Moss Park,Shootings,2017,22013,8,36.34216
@@ -3793,6 +3873,7 @@ Mount Dennis,Robbery,2017,14191,34,239.5885
 Mount Dennis,Robbery,2018,14365,10,69.61365
 Mount Dennis,Robbery,2019,14539,16,110.0488
 Mount Dennis,Robbery,2020,14703,19,129.2253
+Mount Dennis,Shootings,2014,13861,3,21.64346
 Mount Dennis,Shootings,2015,13920,1,7.183908
 Mount Dennis,Shootings,2016,14031,3,21.38123
 Mount Dennis,Shootings,2017,14191,1,7.04672
@@ -3840,6 +3921,7 @@ Mount Olive-Silverstone-Jamestown,Robbery,2017,34435,71,206.1856
 Mount Olive-Silverstone-Jamestown,Robbery,2018,34894,62,177.68099999999998
 Mount Olive-Silverstone-Jamestown,Robbery,2019,35324,59,167.0253
 Mount Olive-Silverstone-Jamestown,Robbery,2020,35772,28,78.27351
+Mount Olive-Silverstone-Jamestown,Shootings,2014,33982,5,14.71367
 Mount Olive-Silverstone-Jamestown,Shootings,2015,33951,11,32.399640000000005
 Mount Olive-Silverstone-Jamestown,Shootings,2016,34036,6,17.62839
 Mount Olive-Silverstone-Jamestown,Shootings,2017,34435,6,17.424129999999998
@@ -3887,6 +3969,7 @@ Mount Pleasant East,Robbery,2017,17448,9,51.58184
 Mount Pleasant East,Robbery,2018,17634,8,45.36691
 Mount Pleasant East,Robbery,2019,17812,13,72.9845
 Mount Pleasant East,Robbery,2020,17972,16,89.02736999999999
+Mount Pleasant East,Shootings,2014,16973,0,0.0
 Mount Pleasant East,Shootings,2015,17104,0,0.0
 Mount Pleasant East,Shootings,2016,17289,0,0.0
 Mount Pleasant East,Shootings,2017,17448,0,0.0
@@ -3934,6 +4017,7 @@ Mount Pleasant West,Robbery,2017,32157,13,40.42665
 Mount Pleasant West,Robbery,2018,33547,25,74.52231
 Mount Pleasant West,Robbery,2019,34916,24,68.7364
 Mount Pleasant West,Robbery,2020,36333,18,49.54174
+Mount Pleasant West,Shootings,2014,30484,0,0.0
 Mount Pleasant West,Shootings,2015,30591,0,0.0
 Mount Pleasant West,Shootings,2016,30858,1,3.2406509999999997
 Mount Pleasant West,Shootings,2017,32157,0,0.0
@@ -3981,6 +4065,7 @@ New Toronto,Robbery,2017,12011,24,199.8168
 New Toronto,Robbery,2018,12196,20,163.9882
 New Toronto,Robbery,2019,12367,17,137.4626
 New Toronto,Robbery,2020,12539,11,87.7263
+New Toronto,Shootings,2014,11623,1,8.603631
 New Toronto,Shootings,2015,11718,1,8.533878999999999
 New Toronto,Shootings,2016,11843,1,8.443807000000001
 New Toronto,Shootings,2017,12011,3,24.9771
@@ -4028,6 +4113,7 @@ Newtonbrook East,Robbery,2017,16886,17,100.6751
 Newtonbrook East,Robbery,2018,17185,6,34.91417
 Newtonbrook East,Robbery,2019,17460,11,63.00114
 Newtonbrook East,Robbery,2020,17742,15,84.54515
+Newtonbrook East,Shootings,2014,16775,0,0.0
 Newtonbrook East,Shootings,2015,16660,0,0.0
 Newtonbrook East,Shootings,2016,16614,1,6.019019999999999
 Newtonbrook East,Shootings,2017,16886,0,0.0
@@ -4075,6 +4161,7 @@ Newtonbrook West,Robbery,2017,24962,46,184.2801
 Newtonbrook West,Robbery,2018,25356,28,110.4275
 Newtonbrook West,Robbery,2019,25740,20,77.70008
 Newtonbrook West,Robbery,2020,26115,23,88.07199
+Newtonbrook West,Shootings,2014,24314,1,4.112857
 Newtonbrook West,Shootings,2015,24425,0,0.0
 Newtonbrook West,Shootings,2016,24602,1,4.06471
 Newtonbrook West,Shootings,2017,24962,0,0.0
@@ -4122,6 +4209,7 @@ Niagara,Robbery,2017,34078,10,29.34444
 Niagara,Robbery,2018,35354,12,33.942409999999995
 Niagara,Robbery,2019,36627,18,49.14407
 Niagara,Robbery,2020,37931,21,55.363690000000005
+Niagara,Shootings,2014,28898,1,3.4604470000000003
 Niagara,Shootings,2015,30767,4,13.00094
 Niagara,Shootings,2016,32887,4,12.16286
 Niagara,Shootings,2017,34078,3,8.803333
@@ -4169,6 +4257,7 @@ North Riverdale,Robbery,2017,12359,21,169.9167
 North Riverdale,Robbery,2018,12435,19,152.7945
 North Riverdale,Robbery,2019,12520,22,175.7189
 North Riverdale,Robbery,2020,12585,14,111.2435
+North Riverdale,Shootings,2014,12401,0,0.0
 North Riverdale,Shootings,2015,12328,0,0.0
 North Riverdale,Shootings,2016,12282,2,16.28399
 North Riverdale,Shootings,2017,12359,1,8.091269
@@ -4216,6 +4305,7 @@ North St. James Town,Robbery,2017,19661,37,188.1898
 North St. James Town,Robbery,2018,19979,28,140.1472
 North St. James Town,Robbery,2019,20276,33,162.754
 North St. James Town,Robbery,2020,20595,39,189.3663
+North St. James Town,Shootings,2014,19087,1,5.239168
 North St. James Town,Shootings,2015,19193,0,0.0
 North St. James Town,Shootings,2016,19396,2,10.3114
 North St. James Town,Shootings,2017,19661,1,5.0862110000000005
@@ -4263,6 +4353,7 @@ O'Connor-Parkview,Robbery,2017,19466,22,113.0176
 O'Connor-Parkview,Robbery,2018,19697,10,50.76915
 O'Connor-Parkview,Robbery,2019,19937,14,70.2212
 O'Connor-Parkview,Robbery,2020,20156,19,94.26473
+O'Connor-Parkview,Shootings,2014,19107,6,31.4021
 O'Connor-Parkview,Shootings,2015,19142,3,15.67234
 O'Connor-Parkview,Shootings,2016,19246,5,25.97942
 O'Connor-Parkview,Shootings,2017,19466,5,25.68581
@@ -4310,6 +4401,7 @@ Oakridge,Robbery,2017,14632,37,252.8704
 Oakridge,Robbery,2018,15003,37,246.6173
 Oakridge,Robbery,2019,15364,32,208.2791
 Oakridge,Robbery,2020,15735,28,177.9473
+Oakridge,Shootings,2014,14182,3,21.15358
 Oakridge,Shootings,2015,14215,12,84.41787
 Oakridge,Shootings,2016,14289,3,20.99517
 Oakridge,Shootings,2017,14632,6,41.00602
@@ -4357,6 +4449,7 @@ Oakwood Village,Robbery,2017,22060,24,108.7942
 Oakwood Village,Robbery,2018,22261,18,80.8589
 Oakwood Village,Robbery,2019,22424,42,187.2993
 Oakwood Village,Robbery,2020,22588,23,101.824
+Oakwood Village,Shootings,2014,21845,0,0.0
 Oakwood Village,Shootings,2015,21840,3,13.73626
 Oakwood Village,Shootings,2016,21893,11,50.24437
 Oakwood Village,Shootings,2017,22060,1,4.533092
@@ -4404,6 +4497,7 @@ Old East York,Robbery,2017,9587,6,62.58475
 Old East York,Robbery,2018,9664,7,72.43378
 Old East York,Robbery,2019,9748,12,123.1022
 Old East York,Robbery,2020,9817,5,50.93206
+Old East York,Shootings,2014,9464,0,0.0
 Old East York,Shootings,2015,9472,1,10.55743
 Old East York,Shootings,2016,9502,1,10.5241
 Old East York,Shootings,2017,9587,1,10.43079
@@ -4451,6 +4545,7 @@ Palmerston-Little Italy,Robbery,2017,14551,12,82.46856
 Palmerston-Little Italy,Robbery,2018,14717,20,135.8973
 Palmerston-Little Italy,Robbery,2019,14856,14,94.23802
 Palmerston-Little Italy,Robbery,2020,14992,6,40.02134
+Palmerston-Little Italy,Shootings,2014,14402,0,0.0
 Palmerston-Little Italy,Shootings,2015,14393,0,0.0
 Palmerston-Little Italy,Shootings,2016,14414,1,6.937699
 Palmerston-Little Italy,Shootings,2017,14551,0,0.0
@@ -4498,6 +4593,7 @@ Parkwoods-Donalda,Robbery,2017,36467,46,126.1414
 Parkwoods-Donalda,Robbery,2018,74114,23,62.06655
 Parkwoods-Donalda,Robbery,2019,37676,36,95.55154
 Parkwoods-Donalda,Robbery,2020,38257,9,23.52511
+Parkwoods-Donalda,Shootings,2014,35822,1,2.7915810000000003
 Parkwoods-Donalda,Shootings,2015,35795,3,8.381059
 Parkwoods-Donalda,Shootings,2016,35883,3,8.360505
 Parkwoods-Donalda,Shootings,2017,36467,9,24.67985
@@ -4545,6 +4641,7 @@ Pelmo Park-Humberlea,Robbery,2017,11360,23,202.4648
 Pelmo Park-Humberlea,Robbery,2018,11662,19,162.9223
 Pelmo Park-Humberlea,Robbery,2019,11967,9,75.20682
 Pelmo Park-Humberlea,Robbery,2020,12278,7,57.01254
+Pelmo Park-Humberlea,Shootings,2014,10208,0,0.0
 Pelmo Park-Humberlea,Shootings,2015,10625,2,18.82353
 Pelmo Park-Humberlea,Shootings,2016,11060,6,54.24955
 Pelmo Park-Humberlea,Shootings,2017,11360,2,17.605629999999998
@@ -4592,6 +4689,7 @@ Playter Estates-Danforth,Robbery,2017,8101,9,111.0974
 Playter Estates-Danforth,Robbery,2018,8156,7,85.82639
 Playter Estates-Danforth,Robbery,2019,8210,11,133.9829
 Playter Estates-Danforth,Robbery,2020,8257,8,96.88749
+Playter Estates-Danforth,Shootings,2014,8007,0,0.0
 Playter Estates-Danforth,Shootings,2015,8019,0,0.0
 Playter Estates-Danforth,Shootings,2016,8061,0,0.0
 Playter Estates-Danforth,Shootings,2017,8101,2,24.68831
@@ -4639,6 +4737,7 @@ Pleasant View,Robbery,2017,16427,6,36.52523
 Pleasant View,Robbery,2018,16569,10,60.353669999999994
 Pleasant View,Robbery,2019,16727,17,101.6321
 Pleasant View,Robbery,2020,16856,10,59.32606
+Pleasant View,Shootings,2014,16424,0,0.0
 Pleasant View,Shootings,2015,16333,3,18.36772
 Pleasant View,Shootings,2016,16287,1,6.1398660000000005
 Pleasant View,Shootings,2017,16427,1,6.087539
@@ -4686,6 +4785,7 @@ Princess-Rosethorn,Robbery,2017,11576,6,51.83138
 Princess-Rosethorn,Robbery,2018,11814,4,33.85814
 Princess-Rosethorn,Robbery,2019,12069,14,115.9997
 Princess-Rosethorn,Robbery,2020,12291,9,73.22431
+Princess-Rosethorn,Shootings,2014,11408,0,0.0
 Princess-Rosethorn,Shootings,2015,11356,0,0.0
 Princess-Rosethorn,Shootings,2016,11337,1,8.820675999999999
 Princess-Rosethorn,Shootings,2017,11576,1,8.638562
@@ -4733,6 +4833,7 @@ Regent Park,Robbery,2017,11698,17,145.32399999999998
 Regent Park,Robbery,2018,12171,33,271.1363
 Regent Park,Robbery,2019,12645,19,150.257
 Regent Park,Robbery,2020,13131,17,129.4646
+Regent Park,Shootings,2014,11031,6,54.39216999999999
 Regent Park,Shootings,2015,11122,5,44.955940000000005
 Regent Park,Shootings,2016,11236,5,44.49982
 Regent Park,Shootings,2017,11698,8,68.38776
@@ -4780,6 +4881,7 @@ Rexdale-Kipling,Robbery,2017,10918,32,293.094
 Rexdale-Kipling,Robbery,2018,10985,22,200.2731
 Rexdale-Kipling,Robbery,2019,11045,23,208.239
 Rexdale-Kipling,Robbery,2020,11095,13,117.1699
+Rexdale-Kipling,Shootings,2014,10837,1,9.227646
 Rexdale-Kipling,Shootings,2015,10834,0,0.0
 Rexdale-Kipling,Shootings,2016,10856,4,36.84599
 Rexdale-Kipling,Shootings,2017,10918,2,18.31837
@@ -4827,6 +4929,7 @@ Rockcliffe-Smythe,Robbery,2017,23129,47,203.2081
 Rockcliffe-Smythe,Robbery,2018,23345,19,81.38788000000001
 Rockcliffe-Smythe,Robbery,2019,23543,9,38.227920000000005
 Rockcliffe-Smythe,Robbery,2020,23751,13,54.73454
+Rockcliffe-Smythe,Shootings,2014,22955,3,13.06905
 Rockcliffe-Smythe,Shootings,2015,22902,6,26.19859
 Rockcliffe-Smythe,Shootings,2016,22937,3,13.0793
 Rockcliffe-Smythe,Shootings,2017,23129,1,4.323576
@@ -4874,6 +4977,7 @@ Roncesvalles,Robbery,2017,15650,25,159.7444
 Roncesvalles,Robbery,2018,15804,25,158.1878
 Roncesvalles,Robbery,2019,15941,24,150.5552
 Roncesvalles,Robbery,2020,16073,24,149.3187
+Roncesvalles,Shootings,2014,15555,0,0.0
 Roncesvalles,Shootings,2015,15506,0,0.0
 Roncesvalles,Shootings,2016,15519,3,19.33114
 Roncesvalles,Shootings,2017,15650,3,19.16933
@@ -4921,6 +5025,7 @@ Rosedale-Moore Park,Robbery,2017,22035,31,140.6853
 Rosedale-Moore Park,Robbery,2018,22591,27,119.5166
 Rosedale-Moore Park,Robbery,2019,23148,21,90.72058
 Rosedale-Moore Park,Robbery,2020,23693,22,92.85443
+Rosedale-Moore Park,Shootings,2014,21407,0,0.0
 Rosedale-Moore Park,Shootings,2015,21417,1,4.669188
 Rosedale-Moore Park,Shootings,2016,21509,1,4.649217
 Rosedale-Moore Park,Shootings,2017,22035,0,0.0
@@ -4968,6 +5073,7 @@ Rouge,Robbery,2017,48616,43,88.44825
 Rouge,Robbery,2018,49382,34,68.851
 Rouge,Robbery,2019,50084,38,75.87254
 Rouge,Robbery,2020,50790,40,78.75565999999999
+Rouge,Shootings,2014,47717,2,4.191378
 Rouge,Shootings,2015,47749,3,6.282854
 Rouge,Shootings,2016,47921,6,12.52061
 Rouge,Shootings,2017,48616,6,12.34162
@@ -5015,6 +5121,7 @@ Runnymede-Bloor West Village,Robbery,2017,10481,17,162.1983
 Runnymede-Bloor West Village,Robbery,2018,10598,20,188.7149
 Runnymede-Bloor West Village,Robbery,2019,10700,20,186.9159
 Runnymede-Bloor West Village,Robbery,2020,10792,7,64.86286
+Runnymede-Bloor West Village,Shootings,2014,10202,0,0.0
 Runnymede-Bloor West Village,Shootings,2015,10288,1,9.720062
 Runnymede-Bloor West Village,Shootings,2016,10384,0,0.0
 Runnymede-Bloor West Village,Shootings,2017,10481,0,0.0
@@ -5062,6 +5169,7 @@ Rustic,Robbery,2017,10348,6,57.98222
 Rustic,Robbery,2018,10483,8,76.31403
 Rustic,Robbery,2019,10621,5,47.07655
 Rustic,Robbery,2020,10756,8,74.37709
+Rustic,Shootings,2014,10233,4,39.089220000000005
 Rustic,Shootings,2015,10213,7,68.54009
 Rustic,Shootings,2016,10223,8,78.25491
 Rustic,Shootings,2017,10348,2,19.32741
@@ -5109,6 +5217,7 @@ Scarborough Village,Robbery,2017,17435,22,126.183
 Scarborough Village,Robbery,2018,17676,11,62.231269999999995
 Scarborough Village,Robbery,2019,17892,28,156.4945
 Scarborough Village,Robbery,2020,18116,17,93.8397
+Scarborough Village,Shootings,2014,17198,1,5.81463
 Scarborough Village,Shootings,2015,17178,2,11.6428
 Scarborough Village,Shootings,2016,17236,3,17.40543
 Scarborough Village,Shootings,2017,17435,5,28.67795
@@ -5156,6 +5265,7 @@ South Parkdale,Robbery,2017,23091,30,129.9207
 South Parkdale,Robbery,2018,23481,33,140.5392
 South Parkdale,Robbery,2019,23836,34,142.6414
 South Parkdale,Robbery,2020,24212,16,66.08293
+South Parkdale,Shootings,2014,22530,0,0.0
 South Parkdale,Shootings,2015,22599,1,4.424974
 South Parkdale,Shootings,2016,22760,7,30.755709999999997
 South Parkdale,Shootings,2017,23091,7,30.314840000000004
@@ -5203,6 +5313,7 @@ South Riverdale,Robbery,2017,29223,66,225.8495
 South Riverdale,Robbery,2018,29569,34,114.9853
 South Riverdale,Robbery,2019,29911,35,117.0138
 South Riverdale,Robbery,2020,30225,35,115.7982
+South Riverdale,Shootings,2014,28011,2,7.140052000000001
 South Riverdale,Shootings,2015,28430,0,0.0
 South Riverdale,Shootings,2016,28911,7,24.21224
 South Riverdale,Shootings,2017,29223,9,30.797659999999997
@@ -5250,6 +5361,7 @@ St.Andrew-Windfields,Robbery,2017,18731,2,10.67749
 St.Andrew-Windfields,Robbery,2018,19184,6,31.27606
 St.Andrew-Windfields,Robbery,2019,19632,11,56.03097
 St.Andrew-Windfields,Robbery,2020,20070,8,39.860490000000006
+St.Andrew-Windfields,Shootings,2014,18380,1,5.440696
 St.Andrew-Windfields,Shootings,2015,18320,0,0.0
 St.Andrew-Windfields,Shootings,2016,18308,2,10.92419
 St.Andrew-Windfields,Shootings,2017,18731,0,0.0
@@ -5297,6 +5409,7 @@ Steeles,Robbery,2017,25700,5,19.45525
 Steeles,Robbery,2018,26124,9,34.45108
 Steeles,Robbery,2019,26525,8,30.16023
 Steeles,Robbery,2020,26911,6,22.295720000000003
+Steeles,Shootings,2014,25532,2,7.833307
 Steeles,Shootings,2015,25389,0,0.0
 Steeles,Shootings,2016,25321,0,0.0
 Steeles,Shootings,2017,25700,0,0.0
@@ -5344,6 +5457,7 @@ Stonegate-Queensway,Robbery,2017,26166,25,95.54384
 Stonegate-Queensway,Robbery,2018,26601,26,97.74068
 Stonegate-Queensway,Robbery,2019,27007,24,88.86585
 Stonegate-Queensway,Robbery,2020,27410,20,72.96607
+Stonegate-Queensway,Shootings,2014,25636,3,11.70229
 Stonegate-Queensway,Shootings,2015,25679,2,7.788465
 Stonegate-Queensway,Shootings,2016,25783,0,0.0
 Stonegate-Queensway,Shootings,2017,26166,1,3.821754
@@ -5391,6 +5505,7 @@ Tam O'Shanter-Sullivan,Robbery,2017,28651,27,94.23755
 Tam O'Shanter-Sullivan,Robbery,2018,29093,17,58.4333
 Tam O'Shanter-Sullivan,Robbery,2019,29537,31,104.9531
 Tam O'Shanter-Sullivan,Robbery,2020,29970,18,60.06006
+Tam O'Shanter-Sullivan,Shootings,2014,28235,0,0.0
 Tam O'Shanter-Sullivan,Shootings,2015,28182,3,10.64509
 Tam O'Shanter-Sullivan,Shootings,2016,28234,2,7.083658
 Tam O'Shanter-Sullivan,Shootings,2017,28651,2,6.9805589999999995
@@ -5438,6 +5553,7 @@ Taylor-Massey,Robbery,2017,16321,18,110.2874
 Taylor-Massey,Robbery,2018,16442,17,103.3937
 Taylor-Massey,Robbery,2019,16534,14,84.67399999999999
 Taylor-Massey,Robbery,2020,16651,26,156.1468
+Taylor-Massey,Shootings,2014,16199,2,12.34644
 Taylor-Massey,Shootings,2015,16178,0,0.0
 Taylor-Massey,Shootings,2016,16237,2,12.31755
 Taylor-Massey,Shootings,2017,16321,3,18.38123
@@ -5485,6 +5601,7 @@ The Beaches,Robbery,2017,22503,48,213.3049
 The Beaches,Robbery,2018,22792,13,57.03756
 The Beaches,Robbery,2019,23088,17,73.63132
 The Beaches,Robbery,2020,23364,6,25.680529999999997
+The Beaches,Shootings,2014,22039,0,0.0
 The Beaches,Shootings,2015,22087,0,0.0
 The Beaches,Shootings,2016,22209,0,0.0
 The Beaches,Shootings,2017,22503,0,0.0
@@ -5532,6 +5649,7 @@ Thistletown-Beaumond Heights,Robbery,2017,10741,23,214.1328
 Thistletown-Beaumond Heights,Robbery,2018,10812,11,101.7388
 Thistletown-Beaumond Heights,Robbery,2019,10891,10,91.81893
 Thistletown-Beaumond Heights,Robbery,2020,10948,9,82.20679
+Thistletown-Beaumond Heights,Shootings,2014,10582,0,0.0
 Thistletown-Beaumond Heights,Shootings,2015,10622,1,9.414423
 Thistletown-Beaumond Heights,Shootings,2016,10676,2,18.73361
 Thistletown-Beaumond Heights,Shootings,2017,10741,2,18.62024
@@ -5579,6 +5697,7 @@ Thorncliffe Park,Robbery,2017,22198,9,40.54419
 Thorncliffe Park,Robbery,2018,22640,4,17.667839999999998
 Thorncliffe Park,Robbery,2019,23058,13,56.379569999999994
 Thorncliffe Park,Robbery,2020,23518,5,21.26031
+Thorncliffe Park,Shootings,2014,21000,1,4.7619050000000005
 Thorncliffe Park,Shootings,2015,21382,2,9.353662
 Thorncliffe Park,Shootings,2016,21810,1,4.585051999999999
 Thorncliffe Park,Shootings,2017,22198,2,9.009821
@@ -5626,6 +5745,7 @@ Toronto,Robbery,2017,2875230,3988,138.7019473224751
 Toronto,Robbery,2018,3431929,3632,105.82969519474325
 Toronto,Robbery,2019,2987098,3524,117.97403366076372
 Toronto,Robbery,2020,3042042,2760,90.72853037532026
+Toronto,Shootings,2014,2776942,177,6.373917784382965
 Toronto,Shootings,2015,2795256,288,10.30317080081395
 Toronto,Shootings,2016,2822888,407,14.417858590209741
 Toronto,Shootings,2017,2875230,392,13.633691913342584
@@ -5673,6 +5793,7 @@ Trinity-Bellwoods,Robbery,2017,17480,19,108.6957
 Trinity-Bellwoods,Robbery,2018,17752,14,78.86435999999999
 Trinity-Bellwoods,Robbery,2019,18014,18,99.92228
 Trinity-Bellwoods,Robbery,2020,18270,20,109.4691
+Trinity-Bellwoods,Shootings,2014,17337,1,5.768011
 Trinity-Bellwoods,Shootings,2015,17259,3,17.38223
 Trinity-Bellwoods,Shootings,2016,17223,4,23.22476
 Trinity-Bellwoods,Shootings,2017,17480,3,17.162470000000003
@@ -5720,6 +5841,7 @@ University,Robbery,2017,8042,24,298.4332
 University,Robbery,2018,8173,23,281.4144
 University,Robbery,2019,8308,13,156.4757
 University,Robbery,2020,8433,13,154.1563
+University,Shootings,2014,8014,0,0.0
 University,Shootings,2015,7954,0,0.0
 University,Shootings,2016,7922,0,0.0
 University,Shootings,2017,8042,1,12.43472
@@ -5767,6 +5889,7 @@ Victoria Village,Robbery,2017,18257,11,60.25086
 Victoria Village,Robbery,2018,18507,13,70.24369
 Victoria Village,Robbery,2019,18762,13,69.28899
 Victoria Village,Robbery,2020,19005,11,57.87951
+Victoria Village,Shootings,2014,17908,2,11.16819
 Victoria Village,Shootings,2015,17932,0,0.0
 Victoria Village,Shootings,2016,18029,3,16.639860000000002
 Victoria Village,Shootings,2017,18257,1,5.4773510000000005
@@ -5814,6 +5937,7 @@ Waterfront Communities-The Island,Robbery,2017,73849,72,97.49624
 Waterfront Communities-The Island,Robbery,2018,235368,116,147.8536
 Waterfront Communities-The Island,Robbery,2019,83071,93,111.9524
 Waterfront Communities-The Island,Robbery,2020,87808,83,94.52441
+Waterfront Communities-The Island,Shootings,2014,60336,8,13.25908
 Waterfront Communities-The Island,Shootings,2015,64714,7,10.81682
 Waterfront Communities-The Island,Shootings,2016,69456,8,11.51808
 Waterfront Communities-The Island,Shootings,2017,73849,14,18.9576
@@ -5861,6 +5985,7 @@ West Hill,Robbery,2017,28558,66,231.1086
 West Hill,Robbery,2018,28947,52,179.6387
 West Hill,Robbery,2019,29309,73,249.0703
 West Hill,Robbery,2020,29669,36,121.3388
+West Hill,Shootings,2014,27871,0,0.0
 West Hill,Shootings,2015,28000,1,3.571429
 West Hill,Shootings,2016,28208,6,21.27056
 West Hill,Shootings,2017,28558,3,10.50494
@@ -5908,6 +6033,7 @@ West Humber-Clairville,Robbery,2017,35085,123,350.5772
 West Humber-Clairville,Robbery,2018,35773,91,254.3818
 West Humber-Clairville,Robbery,2019,36466,72,197.4442
 West Humber-Clairville,Robbery,2020,37133,75,201.9767
+West Humber-Clairville,Shootings,2014,34746,5,14.39015
 West Humber-Clairville,Shootings,2015,34557,7,20.25639
 West Humber-Clairville,Shootings,2016,34419,12,34.86446
 West Humber-Clairville,Shootings,2017,35085,11,31.35243
@@ -5955,6 +6081,7 @@ Westminster-Branson,Robbery,2017,27340,16,58.52231
 Westminster-Branson,Robbery,2018,27651,16,57.86409
 Westminster-Branson,Robbery,2019,27949,8,28.62356
 Westminster-Branson,Robbery,2020,28248,17,60.18125
+Westminster-Branson,Shootings,2014,26735,0,0.0
 Westminster-Branson,Shootings,2015,26849,0,0.0
 Westminster-Branson,Shootings,2016,27069,3,11.08279
 Westminster-Branson,Shootings,2017,27340,0,0.0
@@ -6002,6 +6129,7 @@ Weston,Robbery,2017,18912,46,243.2318
 Weston,Robbery,2018,19300,42,217.6166
 Weston,Robbery,2019,19659,26,132.2549
 Weston,Robbery,2020,20037,27,134.7507
+Weston,Shootings,2014,18668,5,26.7838
 Weston,Shootings,2015,18583,6,32.28757
 Weston,Shootings,2016,18566,13,70.02046999999999
 Weston,Shootings,2017,18912,8,42.301190000000005
@@ -6049,6 +6177,7 @@ Weston-Pelham Park,Robbery,2017,11638,10,85.92541999999999
 Weston-Pelham Park,Robbery,2018,11786,27,229.0854
 Weston-Pelham Park,Robbery,2019,11945,5,41.85852
 Weston-Pelham Park,Robbery,2020,12074,3,24.84678
+Weston-Pelham Park,Shootings,2014,11864,1,8.428861
 Weston-Pelham Park,Shootings,2015,11659,1,8.577065
 Weston-Pelham Park,Shootings,2016,11484,4,34.831070000000004
 Weston-Pelham Park,Shootings,2017,11638,2,17.18508
@@ -6096,6 +6225,7 @@ Wexford/Maryvale,Robbery,2017,29036,34,117.096
 Wexford/Maryvale,Robbery,2018,29331,35,119.3277
 Wexford/Maryvale,Robbery,2019,29612,31,104.6873
 Wexford/Maryvale,Robbery,2020,29864,29,97.10689
+Wexford/Maryvale,Shootings,2014,28398,3,10.56412
 Wexford/Maryvale,Shootings,2015,28563,2,7.002066
 Wexford/Maryvale,Shootings,2016,28766,4,13.9053
 Wexford/Maryvale,Shootings,2017,29036,3,10.332
@@ -6143,6 +6273,7 @@ Willowdale East,Robbery,2017,53660,53,98.77003
 Willowdale East,Robbery,2018,55057,67,121.6921
 Willowdale East,Robbery,2019,56457,44,77.93542
 Willowdale East,Robbery,2020,57856,39,67.40874000000001
+Willowdale East,Shootings,2014,50192,2,3.984699
 Willowdale East,Shootings,2015,51179,0,0.0
 Willowdale East,Shootings,2016,52362,0,0.0
 Willowdale East,Shootings,2017,53660,1,1.863586
@@ -6190,6 +6321,7 @@ Willowdale West,Robbery,2017,18007,21,116.6213
 Willowdale West,Robbery,2018,18530,30,161.8996
 Willowdale West,Robbery,2019,19045,23,120.7666
 Willowdale West,Robbery,2020,19571,25,127.74
+Willowdale West,Shootings,2014,16700,0,0.0
 Willowdale West,Shootings,2015,17078,0,0.0
 Willowdale West,Shootings,2016,17517,1,5.70874
 Willowdale West,Shootings,2017,18007,0,0.0
@@ -6237,6 +6369,7 @@ Willowridge-Martingrove-Richview,Robbery,2017,23106,22,95.21336
 Willowridge-Martingrove-Richview,Robbery,2018,46940,17,72.43289
 Willowridge-Martingrove-Richview,Robbery,2019,23803,39,163.8449
 Willowridge-Martingrove-Richview,Robbery,2020,24158,13,53.8124
+Willowridge-Martingrove-Richview,Shootings,2014,22459,2,8.905116
 Willowridge-Martingrove-Richview,Shootings,2015,22583,2,8.856219
 Willowridge-Martingrove-Richview,Shootings,2016,22775,5,21.9539
 Willowridge-Martingrove-Richview,Shootings,2017,23106,4,17.31152
@@ -6284,6 +6417,7 @@ Woburn,Robbery,2017,55916,125,223.5496
 Woburn,Robbery,2018,56658,76,134.1382
 Woburn,Robbery,2019,57402,67,116.7207
 Woburn,Robbery,2020,58109,55,94.64971
+Woburn,Shootings,2014,55184,2,3.624239
 Woburn,Shootings,2015,55102,6,10.8889
 Woburn,Shootings,2016,55212,4,7.244802
 Woburn,Shootings,2017,55916,7,12.51878
@@ -6331,6 +6465,7 @@ Woodbine Corridor,Robbery,2017,13079,17,129.9794
 Woodbine Corridor,Robbery,2018,13222,24,181.5157
 Woodbine Corridor,Robbery,2019,13351,10,74.90075999999999
 Woodbine Corridor,Robbery,2020,13484,7,51.91338
+Woodbine Corridor,Shootings,2014,12620,0,0.0
 Woodbine Corridor,Shootings,2015,12761,2,15.67275
 Woodbine Corridor,Shootings,2016,12956,1,7.718431
 Woodbine Corridor,Shootings,2017,13079,0,0.0
@@ -6378,6 +6513,7 @@ Woodbine-Lumsden,Robbery,2017,8168,6,73.4574
 Woodbine-Lumsden,Robbery,2018,8214,6,73.04602
 Woodbine-Lumsden,Robbery,2019,8269,3,36.28008
 Woodbine-Lumsden,Robbery,2020,8309,6,72.21085
+Woodbine-Lumsden,Shootings,2014,8102,0,0.0
 Woodbine-Lumsden,Shootings,2015,8100,0,0.0
 Woodbine-Lumsden,Shootings,2016,8118,1,12.31831
 Woodbine-Lumsden,Shootings,2017,8168,0,0.0
@@ -6425,6 +6561,7 @@ Wychwood,Robbery,2017,15096,17,112.6126
 Wychwood,Robbery,2018,15428,20,129.6344
 Wychwood,Robbery,2019,15730,11,69.93007
 Wychwood,Robbery,2020,16037,19,118.476
+Wychwood,Shootings,2014,14655,0,0.0
 Wychwood,Shootings,2015,14710,1,6.798097
 Wychwood,Shootings,2016,14799,0,0.0
 Wychwood,Shootings,2017,15096,0,0.0
@@ -6472,6 +6609,7 @@ Yonge-Eglinton,Robbery,2017,12459,12,96.31592
 Yonge-Eglinton,Robbery,2018,12713,30,235.9789
 Yonge-Eglinton,Robbery,2019,12946,12,92.69273
 Yonge-Eglinton,Robbery,2020,13183,10,75.85526999999999
+Yonge-Eglinton,Shootings,2014,11742,1,8.516437
 Yonge-Eglinton,Shootings,2015,11962,0,0.0
 Yonge-Eglinton,Shootings,2016,12236,0,0.0
 Yonge-Eglinton,Shootings,2017,12459,0,0.0
@@ -6519,6 +6657,7 @@ Yonge-St.Clair,Robbery,2017,13215,1,7.567158999999999
 Yonge-St.Clair,Robbery,2018,13508,1,7.40302
 Yonge-St.Clair,Robbery,2019,13790,4,29.00653
 Yonge-St.Clair,Robbery,2020,14083,5,35.5038
+Yonge-St.Clair,Shootings,2014,12597,0,0.0
 Yonge-St.Clair,Shootings,2015,12747,0,0.0
 Yonge-St.Clair,Shootings,2016,12950,1,7.722008
 Yonge-St.Clair,Shootings,2017,13215,0,0.0
@@ -6566,6 +6705,7 @@ York University Heights,Robbery,2017,28982,76,262.2317
 York University Heights,Robbery,2018,29423,94,319.478
 York University Heights,Robbery,2019,29847,84,281.4353
 York University Heights,Robbery,2020,30277,47,155.2334
+York University Heights,Shootings,2014,28720,2,6.963789
 York University Heights,Shootings,2015,28613,0,0.0
 York University Heights,Shootings,2016,28598,4,13.98699
 York University Heights,Shootings,2017,28982,10,34.50417
@@ -6613,6 +6753,7 @@ Yorkdale-Glen Park,Robbery,2017,15797,34,215.2307
 Yorkdale-Glen Park,Robbery,2018,32764,47,286.9003
 Yorkdale-Glen Park,Robbery,2019,16971,42,247.481
 Yorkdale-Glen Park,Robbery,2020,17560,40,227.7904
+Yorkdale-Glen Park,Shootings,2014,15197,3,19.74074
 Yorkdale-Glen Park,Shootings,2015,15188,3,19.75244
 Yorkdale-Glen Park,Shootings,2016,15228,3,19.70055
 Yorkdale-Glen Park,Shootings,2017,15797,7,44.31221

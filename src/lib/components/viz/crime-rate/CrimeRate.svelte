@@ -7,7 +7,6 @@
 	let { class: className = '' } = $props();
 	let visContainer: HTMLElement;
 	let selectedNeighbourhood = $state('Toronto');
-
 	$effect(() => {
 		if (!visContainer) return;
 
@@ -27,7 +26,7 @@
 					parentElement: visContainer,
 					margin: { top: 40, right: 100, bottom: 40, left: 60 },
 					onNeighbourhoodChange: (neighbourhood) => {
-						selectedNeighbourhood = neighbourhood; // Update selected neighbourhood
+						selectedNeighbourhood = neighbourhood;
 					}
 				},
 				parsedData

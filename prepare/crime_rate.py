@@ -2,11 +2,13 @@ import pandas as pd
 import re
 import os
 
-profile_df = pd.read_csv('/Users/millyphilly/Desktop/CPSC304 project/g15/static/data/original/neighbourhood-profiles-2016-csv.csv')
-profile_df.head()
+# Get the directory where the script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_dir = os.path.dirname(script_dir) 
 
-crime_df = pd.read_csv('/Users/millyphilly/Desktop/CPSC304 project/g15/static/data/original/neighbourhood-crime-rates.csv')
-crime_df.head()
+# Use relative paths based on the script location
+profile_df = pd.read_csv(os.path.join(project_dir, 'static/data/original/neighbourhood-profiles-2016-csv.csv'))
+crime_df = pd.read_csv(os.path.join(project_dir, 'static/data/original/neighbourhood-crime-rates.csv'))
 
 # get the intersection of two data above
 # Get neighbourhood names from profile_df (excluding non-neighbourhood columns)
@@ -71,6 +73,13 @@ count_df[['crime_type', 'year']] = count_df['crime_type_year'].str.extract(r'(.+
 # Extract crime type and year from rate_df (note the different pattern for rate columns)
 rate_df[['crime_type', 'year']] = rate_df['crime_type_year'].str.extract(r'(.+)_Rate(\d{4})')
 
+# Fix the specific issue with "Shooting" vs "Shootings"
+# Convert any "Shooting" (singular) to "Shootings" (plural) for consistency
+rate_df.loc[rate_df['crime_type'] == 'Shooting', 'crime_type'] = 'Shootings'
+
+# Also fix the same issue in count_df for complete consistency
+count_df.loc[count_df['crime_type'] == 'Shooting', 'crime_type'] = 'Shootings'
+
 # Drop temporary columns
 count_df = count_df.drop('crime_type_year', axis=1)
 rate_df = rate_df.drop('crime_type_year', axis=1)
@@ -126,5 +135,5 @@ crime_df_long = pd.concat([crime_df_long, toronto_df], ignore_index=True)
 # Sort values again before saving
 crime_df_long = crime_df_long.sort_values(by=['neighbourhood', 'crime_type', 'year'])
 
-# Save to CSV
-crime_df_long.to_csv('/Users/millyphilly/Desktop/CPSC304 project/g15/static/data/processed/neighbourhood-crime-rates.csv', index=False)
+# Save to CSV using relative path
+crime_df_long.to_csv(os.path.join(project_dir, 'static/data/processed/neighbourhood-crime-rates.csv'), index=False)
