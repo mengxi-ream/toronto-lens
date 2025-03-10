@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="0.0.3"></a>
+
+## 0.0.3 (2025-03-11)
+
+### Added
+
+- ✨ feat: added tooltip and legend functions for crime-rate chart (#15) [0de7792]
+
+### Changed
+
+- ♻️ refactor: add types and color schema (#14) [4e7e3cd]
+
+### WIP
+
+- PR: https://github.students.cs.ubc.ca/CPSC447-2024W-T2/g15/pull/16
+
 <a name="0.0.2"></a>
 
 ## 0.0.2 (2025-03-08)
