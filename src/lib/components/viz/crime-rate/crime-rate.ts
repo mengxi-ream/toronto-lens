@@ -47,7 +47,7 @@ export class CrimeRateChart {
 			containerWidth: config.containerWidth ?? 600,
 			containerHeight: config.containerHeight ?? 300,
 			tooltipPadding: config.tooltipPadding ?? 15,
-			margin: config.margin ?? { top: 120, right: 20, bottom: 20, left: 45 },
+			margin: config.margin ?? { top: 40, right: 20, bottom: 20, left: 45 },
 			legendWidth: config.legendWidth ?? 5,
 			legendHeight: config.legendHeight ?? 5,
 			legendRadius: config.legendRadius ?? 5,
@@ -114,9 +114,8 @@ export class CrimeRateChart {
 		this.yScale = d3.scaleLinear().range([this.height, 0]);
 		this.colorScale = d3.scaleOrdinal(colorSchema);
 
-		// Initialize axes
+		// Initialize axes with custom tick formatting
 		this.xAxis = this.chart.append('g').attr('transform', `translate(0,${this.height})`);
-
 		this.yAxis = this.chart.append('g');
 
 		// Add axis labels
@@ -136,6 +135,21 @@ export class CrimeRateChart {
 			.attr('x', -this.height / 2)
 			.style('text-anchor', 'middle')
 			.text('Crime Rate (per 100,000 population)');
+
+		// Add tooltip div
+		d3.select('body')
+			.append('div')
+			.attr('id', 'crime-tooltip')
+			.style('position', 'absolute')
+			.style('opacity', 0)
+			.style('background', 'white')
+			.style('border', '1px solid #ddd')
+			.style('padding', '10px')
+			.style('border-radius', '4px')
+			.style('pointer-events', 'none')
+			.style('font-size', '12px')
+			.style('box-shadow', '0 2px 5px rgba(0, 0, 0, 0.1)')
+			.style('z-index', '1000');
 	}
 
 	public updateVis(): void {
@@ -161,35 +175,166 @@ export class CrimeRateChart {
 			.x((d) => this.xScale(new Date(d.year, 0)))
 			.y((d) => this.yScale(+d.crime_rate));
 
-		// Draw lines
+		// Draw lines with points
 		crimeTypes.forEach((crimeType) => {
 			const crimeData = filteredData.filter((d) => d.crime_type === crimeType);
 
+			// Draw the line
 			this.chart
 				.append('path')
 				.datum(crimeData)
-				.attr('class', 'line')
+				.attr('class', `line line-${crimeType.replace(/\s+/g, '-')}`)
 				.attr('d', line)
 				.style('fill', 'none')
 				.style('stroke', this.colorScale(crimeType))
 				.style('stroke-width', 2);
+
+			// Add points at each data point
+			this.chart
+				.selectAll(`.point-${crimeType.replace(/\s+/g, '-')}`)
+				.data(crimeData)
+				.join('circle')
+				.attr('class', `point-${crimeType.replace(/\s+/g, '-')}`)
+				.attr('cx', (d) => this.xScale(new Date(d.year, 0)))
+				.attr('cy', (d) => this.yScale(+d.crime_rate))
+				.attr('r', 5)
+				.style('fill', this.colorScale(crimeType))
+				.style('stroke', '#fff')
+				.style('stroke-width', 1.5)
+				.on('mouseover', (event, d) => {
+					d3.select(event.currentTarget).attr('r', 7).style('stroke-width', 2);
+
+					d3.select('#crime-tooltip')
+						.style('opacity', 1)
+						.html(
+							`<div class="tooltip-label">
+							<strong>${crimeType}</strong><br>
+							Year: ${d.year}<br>
+							Crime Rate: ${d.crime_rate.toFixed(1)} per 100,000
+						</div>`
+						)
+						.style('left', event.pageX + this.config.tooltipPadding + 'px')
+						.style('top', event.pageY + this.config.tooltipPadding + 'px');
+				})
+				.on('mousemove', (event) => {
+					d3.select('#crime-tooltip') // Updated ID
+						.style('left', event.pageX + this.config.tooltipPadding + 'px')
+						.style('top', event.pageY + this.config.tooltipPadding + 'px');
+				})
+				.on('mouseout', (event) => {
+					d3.select(event.currentTarget).attr('r', 5).style('stroke-width', 1.5);
+
+					d3.select('#crime-tooltip').style('opacity', 0);
+				});
 		});
 
-		// Add legend
+		// Clear existing legend
+		this.chart.selectAll('.legend').remove();
+
+		// Add legend with interactivity
 		const legend = this.chart
 			.append('g')
 			.attr('class', 'legend')
 			.attr('transform', `translate(${this.width + 10}, 0)`);
 
-		crimeTypes.forEach((crimeType, i) => {
-			const legendRow = legend.append('g').attr('transform', `translate(0, ${i * 20})`);
+		// Track active crime types (initially all are active)
+		const activeCrimeTypes = new Set(crimeTypes);
 
+		// Function to create a consistent y-axis generator
+		const createYAxisGenerator = () => {
+			const maxValue = this.yScale.domain()[1];
+
+			// Round up maxValue to nearest 100 or 50
+			const roundTo = maxValue > 500 ? 100 : 50;
+			const roundedMax = Math.ceil(maxValue / roundTo) * roundTo;
+
+			// Create evenly spaced tick values
+			const tickCount = 6;
+			const tickStep = roundedMax / (tickCount - 1);
+			const tickValues = Array.from({ length: tickCount }, (_, i) => i * tickStep);
+
+			// Update the scale domain to match our rounded max
+			this.yScale.domain([0, roundedMax]);
+
+			return d3
+				.axisLeft(this.yScale)
+				.tickValues(tickValues)
+				.tickFormat((d) => {
+					if (d >= 1000) {
+						return (d / 1000).toFixed(1) + 'k';
+					}
+					return d.toFixed(0);
+				});
+		};
+
+		// Function to update the chart based on active crime types
+		const updateChart = () => {
+			// Filter data for only active crime types
+			const activeData = filteredData.filter((d) => activeCrimeTypes.has(d.crime_type));
+
+			// Recalculate y-axis domain based on active data
+			const maxCrimeRate = d3.max(activeData, (d) => +d.crime_rate) as number;
+			this.yScale.domain([0, maxCrimeRate * 1.1]);
+
+			// Update y-axis with animation
+			this.yAxis.transition().duration(500).call(createYAxisGenerator());
+
+			// Update visibility and positions of lines and points
+			crimeTypes.forEach((type) => {
+				const isActive = activeCrimeTypes.has(type);
+
+				// Update lines
+				this.chart
+					.selectAll(`.line-${type.replace(/\s+/g, '-')}`)
+					.style('opacity', isActive ? 1 : 0)
+					.transition()
+					.duration(500)
+					.attr('d', line);
+
+				// Update points
+				this.chart
+					.selectAll(`.point-${type.replace(/\s+/g, '-')}`)
+					.style('opacity', isActive ? 1 : 0)
+					.transition()
+					.duration(500)
+					.attr('cy', (d) => this.yScale(+d.crime_rate));
+			});
+		};
+
+		crimeTypes.forEach((crimeType, i) => {
+			const legendRow = legend
+				.append('g')
+				.attr('class', 'legend-row')
+				.attr('transform', `translate(0, ${i * 20})`)
+				.style('cursor', 'pointer')
+				.on('click', () => {
+					// Toggle this crime type's active state
+					if (activeCrimeTypes.has(crimeType)) {
+						if (activeCrimeTypes.size > 1) {
+							activeCrimeTypes.delete(crimeType);
+						}
+					} else {
+						activeCrimeTypes.add(crimeType);
+					}
+
+					// Update opacity of legend items
+					legend.selectAll('.legend-row').style('opacity', (d, j) => {
+						const currentCrimeType = crimeTypes[j];
+						return activeCrimeTypes.has(currentCrimeType) ? 1 : 0.5;
+					});
+
+					// Update chart with new active crime types
+					updateChart();
+				});
+
+			// Add colored rectangle
 			legendRow
 				.append('rect')
 				.attr('width', this.config.legendWidth ?? 5)
 				.attr('height', this.config.legendHeight ?? 5)
 				.style('fill', this.colorScale(crimeType));
 
+			// Add text label
 			legendRow
 				.append('text')
 				.attr('x', 20)
@@ -198,8 +343,10 @@ export class CrimeRateChart {
 				.text(crimeType);
 		});
 
+		// Initial y-axis setup
+		this.yAxis.call(createYAxisGenerator());
+
 		// Update axes
 		this.xAxis.call(d3.axisBottom(this.xScale));
-		this.yAxis.call(d3.axisLeft(this.yScale));
 	}
 }
