@@ -13,7 +13,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"changelog": "gitmoji-changelog",
-		"gh-pages": "VITE_BUILD_GH_PAGES=true pnpm run build && npx gh-pages -d build -t -r https://github.students.cs.ubc.ca/kzhang48/cpsc447-g15.git"
+		"gh-pages": "VITE_BUILD_GH_PAGES=true pnpm run build && npx gh-pages -d build -t -r https://github.students.cs.ubc.ca/kzhang48/cpsc447-g15.git",
+		"upload": "pnpm run build && tsx scripts/upload-build.ts"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
@@ -49,6 +50,7 @@
 		"tailwind-merge": "^3.0.2",
 		"tailwindcss": "^4.0.0",
 		"topojson-server": "^3.0.1",
+		"tsx": "^4.19.3",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.20.0",
 		"vite": "^6.0.0"
