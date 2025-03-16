@@ -3,6 +3,7 @@
 	import * as d3 from 'd3';
 	import { cn } from '$lib/utils/utils';
 	import { base } from '$app/paths';
+	import { CrimeRateSchema } from '$lib/types/data/crime-rate';
 
 	let { class: className = '' } = $props();
 	let visContainer: HTMLElement;
@@ -12,14 +13,7 @@
 
 		const initVis = async () => {
 			const rawData = await d3.csv(`${base}/data/processed/neighbourhood-crime-rates.csv`);
-
-			// Parse the CSV data to match CrimeData interface
-			const parsedData = rawData.map((d) => ({
-				year: +d.year,
-				crime_type: d.crime_type,
-				crime_rate: +d.crime_rate,
-				neighbourhood: d.neighbourhood
-			}));
+			const data = rawData.map((row: unknown) => CrimeRateSchema.parse(row));
 
 			const crimeRateChart = new CrimeRateChart(
 				{
@@ -29,7 +23,7 @@
 						selectedNeighbourhood = neighbourhood;
 					}
 				},
-				parsedData
+				data
 			);
 
 			crimeRateChart.updateVis();

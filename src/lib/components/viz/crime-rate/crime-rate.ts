@@ -1,28 +1,7 @@
 import * as d3 from 'd3';
 import { colorSchema } from '$lib/utils/colorSchema';
-interface CrimeData {
-	year: number;
-	crime_type: string;
-	crime_rate: number;
-	neighbourhood: string;
-}
-
-export interface CrimeRateConfig {
-	parentElement: HTMLElement;
-	containerWidth?: number;
-	containerHeight?: number;
-	margin?: {
-		top: number;
-		right: number;
-		bottom: number;
-		left: number;
-	};
-	legendWidth?: number;
-	legendHeight?: number;
-	legendRadius?: number;
-	tooltipPadding?: number;
-	onNeighbourhoodChange?: (neighbourhood: string) => void;
-}
+import type { CrimeRateConfig } from '$lib/types/chart/crime-chart';
+import type { CrimeData } from '$lib/types/data/crime-rate';
 
 export class CrimeRateChart {
 	private config: CrimeRateConfig;
@@ -179,8 +158,8 @@ export class CrimeRateChart {
 		crimeTypes.forEach((crimeType) => {
 			const crimeData = filteredData.filter((d) => d.crime_type === crimeType);
 
-			// Draw the line
-			this.chart
+			// Draw the line with left-to-right animation
+			const path = this.chart
 				.append('path')
 				.datum(crimeData)
 				.attr('class', `line line-${crimeType.replace(/\s+/g, '-')}`)
@@ -189,7 +168,23 @@ export class CrimeRateChart {
 				.style('stroke', this.colorScale(crimeType))
 				.style('stroke-width', 2);
 
-			// Add points at each data point
+			// Get the total length of the path
+			const pathLength = path.node()?.getTotalLength() || 0;
+
+			// Set up the animation using stroke-dasharray and stroke-dashoffset
+			path
+				.attr('stroke-dasharray', pathLength)
+				.attr('stroke-dashoffset', pathLength)
+				.transition()
+				.duration(1500)
+				.ease(d3.easeLinear)
+				.attr('stroke-dashoffset', 0)
+				.on('end', function () {
+					// Remove the dash array after animation completes
+					d3.select(this).attr('stroke-dasharray', null);
+				});
+
+			// Add points with delayed appearance
 			this.chart
 				.selectAll(`.point-${crimeType.replace(/\s+/g, '-')}`)
 				.data(crimeData)
@@ -197,7 +192,7 @@ export class CrimeRateChart {
 				.attr('class', `point-${crimeType.replace(/\s+/g, '-')}`)
 				.attr('cx', (d) => this.xScale(new Date(d.year, 0)))
 				.attr('cy', (d) => this.yScale(+d.crime_rate))
-				.attr('r', 5)
+				.attr('r', 0) // Start with radius 0
 				.style('fill', this.colorScale(crimeType))
 				.style('stroke', '#fff')
 				.style('stroke-width', 1.5)
@@ -226,6 +221,14 @@ export class CrimeRateChart {
 
 					d3.select('#crime-tooltip').style('opacity', 0);
 				});
+
+			// Animate points to appear as the line reaches them
+			this.chart
+				.selectAll(`.point-${crimeType.replace(/\s+/g, '-')}`)
+				.transition()
+				.delay((d, i) => (i * 1500) / crimeData.length) // Delay based on position
+				.duration(300)
+				.attr('r', 5); // Grow to full size
 		});
 
 		// Clear existing legend
