@@ -148,7 +148,7 @@ export class Maps {
 			.attr('y2', (d) => d.target[1]);
 
 		connectionsData.forEach((connection) => {
-			const numDots = Math.ceil((connection.original.count / maxCount) * 4) + 1;
+			const numDots = Math.ceil((connection.original.count / maxCount) * 8) + 1;
 
 			for (let i = 0; i < numDots; i++) {
 				const animationDuration = this.config.animationDuration;
