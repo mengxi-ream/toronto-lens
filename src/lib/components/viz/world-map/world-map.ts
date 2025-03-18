@@ -22,6 +22,7 @@ import { get } from 'svelte/store';
 import type { ImmigrationData } from '$lib/types/data/immigration';
 import type { GeoFeature } from '$lib/types/chart/map';
 import { findOptimalCenterPoint } from '$lib/utils/map';
+import { base } from '$app/paths';
 
 // 定义简化的 TopoJSON 类型
 interface TopoData extends Topology {
@@ -93,7 +94,7 @@ export class WorldMap {
 
 	private async loadMap(): Promise<boolean> {
 		try {
-			const response = await fetch('/data/original/world.json');
+			const response = await fetch(`${base}/data/original/world.json`);
 			this.topoData = await response.json();
 
 			if (this.projection && this.topoData) {

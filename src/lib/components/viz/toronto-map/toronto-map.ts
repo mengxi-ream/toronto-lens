@@ -20,6 +20,7 @@ import { colorSchema, sequentialColorSchema } from '$lib/utils/colorSchema';
 import type { TorontoMapConfig } from '$lib/types/chart/layout';
 import { findOptimalCenterPoint } from '$lib/utils/map';
 import type { NeighbourhoodData } from '$lib/types/data/neighbourhood';
+import { base } from '$app/paths';
 
 const defaultConfig: Required<TorontoMapConfig> = {
 	projectionFunc: geoMercator,
@@ -91,7 +92,7 @@ export class TorontoMap {
 
 	async loadMap(): Promise<boolean> {
 		try {
-			const response = await fetch('/data/original/neighbourhoods.json');
+			const response = await fetch(`${base}/data/original/neighbourhoods.json`);
 			this.topoData = await response.json();
 
 			if (this.projection && this.topoData) {
