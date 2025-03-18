@@ -24,3 +24,4 @@ vite.config.ts.timestamp-*
 
 # Package manager
 package-lock.json
+.svelte-kit/

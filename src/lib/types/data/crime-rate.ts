@@ -12,11 +12,11 @@ export const crimeCategories = [
 
 export type CrimeCategory = (typeof crimeCategories)[number];
 
-export const CrimeRateSchema = z.object({
+export const crimeRateSchema = z.object({
 	year: z.coerce.number(),
 	crime_type: z.string(),
 	crime_rate: z.coerce.number(),
 	neighbourhood: z.string()
 });
 
-export type CrimeData = z.infer<typeof CrimeRateSchema>;
+export type CrimeData = z.infer<typeof crimeRateSchema>;

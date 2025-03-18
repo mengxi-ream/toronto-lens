@@ -10,3 +10,17 @@ export const colorSchema = [
 	'#009488',
 	'#FF7DDA'
 ];
+
+export const sequentialColorSchema = {
+	50: '#edf6ff',
+	100: '#d7eaff',
+	200: '#b9dcff',
+	300: '#88c7ff',
+	400: '#50a7ff',
+	500: '#2882ff',
+	600: '#1664ff',
+	700: '#0a4aeb',
+	800: '#0f3cbe',
+	900: '#133895',
+	950: '#11245a'
+};

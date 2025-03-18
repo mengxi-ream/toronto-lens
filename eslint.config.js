@@ -30,5 +30,17 @@ export default ts.config(
 				parser: ts.parser
 			}
 		}
+	},
+	{
+		rules: {
+			// 配置忽略以下划线开头的未使用变量
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_'
+				}
+			]
+		}
 	}
 );

@@ -30105,7 +30105,7 @@
 				{
 					"arcs": [[319, 320, -37]],
 					"type": "Polygon",
-					"properties": { "neighbourhood": "North St.James Town", "neighbourhood_group": null }
+					"properties": { "neighbourhood": "North St. James Town", "neighbourhood_group": null }
 				},
 				{
 					"arcs": [[321, -129, 322, -145]],
@@ -30198,7 +30198,7 @@
 				{
 					"arcs": [[-214, -202, -277, -205, -306]],
 					"type": "Polygon",
-					"properties": { "neighbourhood": "Weston-Pellam Park", "neighbourhood_group": null }
+					"properties": { "neighbourhood": "Weston-Pelham Park", "neighbourhood_group": null }
 				},
 				{
 					"arcs": [[-302, 356, -265, -317, -136, -263]],
@@ -30257,7 +30257,7 @@
 					"arcs": [[-38, -321, -325, -221, -346, 365]],
 					"type": "Polygon",
 					"properties": {
-						"neighbourhood": "Cabbagetown-South St.James Town",
+						"neighbourhood": "Cabbagetown-South St. James Town",
 						"neighbourhood_group": null
 					}
 				},

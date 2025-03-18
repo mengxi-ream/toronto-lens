@@ -10,7 +10,7 @@ export const disasterCategories = [
 
 export type DisasterCategory = (typeof disasterCategories)[number];
 
-export const DisasterSchema = z
+export const disasterSchema = z
 	.object({
 		mid: z.coerce.date(),
 		year: z.coerce.number(),
@@ -29,4 +29,4 @@ export const DisasterSchema = z
 		cost: data.cost
 	}));
 
-export type DisasterData = z.infer<typeof DisasterSchema>;
+export type DisasterData = z.infer<typeof disasterSchema>;
