@@ -199,16 +199,22 @@ export class WorldMap {
 				const countryName = d.properties?.name;
 				const countSum = countryName ? this.countryCountMap.get(countryName) || 0 : 0;
 
+				const layerX = event.clientX - this.parentElement.getBoundingClientRect().left;
+				const layerY = event.clientY - this.parentElement.getBoundingClientRect().top;
+
 				tooltip
 					.style('opacity', 1)
 					.html(`${countryName}<br><strong>Immigration Count:</strong> ${countSum}`)
-					.style('left', event.layerX + this.config.tooltip.padding + 'px')
-					.style('top', event.layerY + this.config.tooltip.padding + 'px');
+					.style('left', layerX + this.config.tooltip.padding + 'px')
+					.style('top', layerY + this.config.tooltip.padding + 'px');
 			})
 			.on('mousemove', (event) => {
+				const layerX = event.clientX - this.parentElement.getBoundingClientRect().left;
+				const layerY = event.clientY - this.parentElement.getBoundingClientRect().top;
+
 				tooltip
-					.style('left', event.layerX + this.config.tooltip.padding + 'px')
-					.style('top', event.layerY + this.config.tooltip.padding + 'px');
+					.style('left', layerX + this.config.tooltip.padding + 'px')
+					.style('top', layerY + this.config.tooltip.padding + 'px');
 			})
 			.on('mouseleave', () => {
 				tooltip.style('opacity', 0);

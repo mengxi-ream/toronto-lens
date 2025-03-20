@@ -187,18 +187,26 @@ export class TorontoMap {
 				const neighbourhoodName = d.properties?.neighbourhood;
 				const density = this.data.get(neighbourhoodName)?.population_density;
 
+				// Don't use event.layerX and event.layerY, because they may have different behavior on different browsers
+				const layerX = event.clientX - this.parentElement.getBoundingClientRect().left;
+				const layerY = event.clientY - this.parentElement.getBoundingClientRect().top;
+
 				tooltip
 					.style('opacity', 1)
 					.html(
 						`${neighbourhoodName}<br><strong>Population Density:</strong> ${density ? density.toFixed(2) : 'N/A'}`
 					)
-					.style('left', event.layerX + this.config.tooltip.padding + 'px')
-					.style('top', event.layerY + this.config.tooltip.padding + 'px');
+					.style('left', layerX + this.config.tooltip.padding + 'px')
+					.style('top', layerY + this.config.tooltip.padding + 'px');
 			})
 			.on('mousemove', (event) => {
+				// Don't use event.layerX and event.layerY, because they may have different behavior on different browsers
+				const layerX = event.clientX - this.parentElement.getBoundingClientRect().left;
+				const layerY = event.clientY - this.parentElement.getBoundingClientRect().top;
+
 				tooltip
-					.style('left', event.layerX + this.config.tooltip.padding + 'px')
-					.style('top', event.layerY + this.config.tooltip.padding + 'px');
+					.style('left', layerX + this.config.tooltip.padding + 'px')
+					.style('top', layerY + this.config.tooltip.padding + 'px');
 			})
 			.on('mouseleave', () => {
 				tooltip.style('opacity', 0);

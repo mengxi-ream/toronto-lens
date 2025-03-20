@@ -48,8 +48,8 @@ export class Maps {
 		this.height = containerRect.height - this.config.margin.top - this.config.margin.bottom;
 
 		const container = select(this.parentElement);
-		this.torontoContainer = container.append('div').attr('class', 'w-full h-1/2');
-		this.worldContainer = container.append('div').attr('class', 'w-full h-1/2');
+		this.torontoContainer = container.append('div').attr('class', 'w-full h-1/2 relative');
+		this.worldContainer = container.append('div').attr('class', 'w-full h-1/2 relative');
 		this.svg = container
 			.append('svg')
 			.attr('width', this.width)
