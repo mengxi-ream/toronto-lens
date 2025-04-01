@@ -68,8 +68,8 @@ export class WorldMap {
 		config: WorldMapConfig = defaultConfig
 	) {
 		this.parentElement = parentElement;
-		this.data = data;
 		this.config = merge(defaultConfig, config);
+		this.data = data;
 
 		const containerRect = this.parentElement.getBoundingClientRect();
 		this.width = containerRect.width - this.config.margin.left - this.config.margin.right;
@@ -88,8 +88,10 @@ export class WorldMap {
 		this.path = geoPath().projection(this.projection);
 
 		this.colorScale = scaleLinear<string>()
-			.range([sequentialColorSchema[100], sequentialColorSchema[600]]) // 从白色到主色，数值越大颜色越深
+			.range([sequentialColorSchema[100], sequentialColorSchema[600]])
 			.interpolate(interpolateRgb);
+
+		this.updateVis();
 	}
 
 	private async loadMap(): Promise<boolean> {

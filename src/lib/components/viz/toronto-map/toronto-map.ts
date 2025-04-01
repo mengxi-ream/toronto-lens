@@ -1,4 +1,5 @@
-import { selectedCountry, selectedNeighbourhood } from '$lib/stores/map';
+import { selectedCountry, selectedNeighbourhood, selectedMetric } from '$lib/stores/map';
+import { filterRanges, type FilterRanges } from '$lib/stores/filter';
 import {
 	geoMercator,
 	geoPath,
@@ -16,7 +17,13 @@ import type { Geometry } from 'geojson';
 import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import { get } from 'svelte/store';
-import { colorSchema, sequentialColorSchema } from '$lib/utils/colorSchema';
+import {
+	colorSchema,
+	sequentialColorSchema,
+	orangeSequentialColorSchema,
+	purpleSequentialColorSchema,
+	cyanSequentialColorSchema
+} from '$lib/utils/colorSchema';
 import type { TorontoMapConfig } from '$lib/types/chart/layout';
 import { findOptimalCenterPoint } from '$lib/utils/map';
 import type { NeighbourhoodData } from '$lib/types/data/neighbourhood';
@@ -59,6 +66,34 @@ export class TorontoMap {
 	private geoData: FeatureCollection | null = null;
 	private centerPoints: Map<string, [number, number]> = new Map();
 	private colorScale: d3.ScaleLinear<string, string> = scaleLinear<string, string>();
+	private metricUnsubscribe: () => void;
+	private filterUnsubscribe: () => void;
+	private legendGroup: Selection<SVGGElement, unknown, null, undefined> | null = null;
+	private legendRect: Selection<SVGRectElement, unknown, null, undefined> | null = null;
+	private legendTitle: Selection<SVGTextElement, unknown, null, undefined> | null = null;
+	private linearGradient: Selection<SVGLinearGradientElement, unknown, null, undefined> | null =
+		null;
+
+	private readonly metricMapping: Record<string, keyof NeighbourhoodData> = {
+		population_density: 'population_density',
+		household_income: 'Average after-tax income of households in 2015 ($)',
+		crime_rate: 'overall_crime_rate',
+		cultural_diversity: 'shannon_diversity'
+	};
+
+	private readonly metricDisplayNames: Record<string, string> = {
+		population_density: 'Population Density',
+		household_income: 'Household Income ($)',
+		crime_rate: 'Crime Rate (per 100,000)',
+		cultural_diversity: 'Cultural Diversity Index'
+	};
+
+	private readonly metricColorSchemas: Record<string, typeof sequentialColorSchema> = {
+		population_density: sequentialColorSchema,
+		household_income: orangeSequentialColorSchema,
+		crime_rate: purpleSequentialColorSchema,
+		cultural_diversity: cyanSequentialColorSchema
+	};
 
 	constructor(
 		parentElement: HTMLElement,
@@ -85,9 +120,23 @@ export class TorontoMap {
 		this.projection = this.config.projectionFunc();
 		this.path = geoPath().projection(this.projection);
 
+		// Initialize color scale with default schema
 		this.colorScale = scaleLinear<string>()
 			.range([sequentialColorSchema[100], sequentialColorSchema[600]])
 			.interpolate(interpolateHcl);
+
+		// Initialize legend
+		this.initializeLegend();
+
+		// Subscribe to metric changes
+		this.metricUnsubscribe = selectedMetric.subscribe(() => {
+			this.updateVis();
+		});
+
+		// Subscribe to filter changes
+		this.filterUnsubscribe = filterRanges.subscribe(() => {
+			this.updateVis();
+		});
 	}
 
 	async loadMap(): Promise<boolean> {
@@ -121,26 +170,44 @@ export class TorontoMap {
 		this.height = height - this.config.margin.top - this.config.margin.bottom;
 
 		this.svg.attr('width', width).attr('height', height).attr('viewBox', `0 0 ${width} ${height}`);
+
+		// Update legend position on resize
+		if (this.legendGroup) {
+			this.legendGroup.attr('transform', `translate(${this.width - 160}, ${this.height - 40})`);
+		}
+
 		this.updateVis();
 	}
 
 	public async updateVis() {
 		await this.loadMap();
 
-		const maxPopulationDensity = Math.max(
-			...Array.from(this.data.values()).map((d) => d.population_density)
-		);
-		const minPopulationDensity = Math.min(
-			...Array.from(this.data.values()).map((d) => d.population_density)
-		);
+		const metric = get(selectedMetric);
+		const dataField = this.metricMapping[metric];
+		const values = Array.from(this.data.values())
+			.map((d) => d[dataField])
+			.filter((v): v is number => typeof v === 'number');
+		const maxValue = Math.max(...values);
+		const minValue = Math.min(...values);
 
-		this.colorScale.domain([minPopulationDensity, maxPopulationDensity]);
+		// Get the appropriate color schema for the current metric
+		const currentColorSchema = this.metricColorSchemas[metric];
 
+		// Update color scale with the current metric's color schema
+		this.colorScale
+			.range([currentColorSchema[100], currentColorSchema[600]])
+			.domain([minValue, maxValue]);
+
+		this.updateLegend();
 		this.renderVis();
 	}
 
 	private renderVis() {
 		if (!this.topoData || !this.geoData) return;
+
+		const metric = get(selectedMetric) as keyof FilterRanges;
+		const dataField = this.metricMapping[metric];
+		const currentFilterRanges = get(filterRanges);
 
 		const sortedFeatures = [...this.geoData.features].sort((a, b) => {
 			const aIsSelected = a.properties?.neighbourhood === get(selectedNeighbourhood);
@@ -163,13 +230,43 @@ export class TorontoMap {
 			.join('path')
 			.attr('class', 'neighbourhood')
 			.attr('d', (d) => this.path(d))
-			.attr('fill', (d) =>
-				this.colorScale(this.data.get(d.properties?.neighbourhood)?.population_density ?? 0)
-			)
+			.attr('fill', (d) => {
+				const neighbourhood = d.properties?.neighbourhood;
+				if (!neighbourhood) return '#ccc';
+
+				const data = this.data.get(neighbourhood);
+				if (!data) return '#ccc';
+
+				// Check if all metrics are within their filter ranges
+				const meetsAllFilters = Object.entries(currentFilterRanges).every(([metricKey, range]) => {
+					const value = data[this.metricMapping[metricKey as keyof FilterRanges]];
+					return typeof value === 'number' && value >= range.min && value <= range.max;
+				});
+
+				if (!meetsAllFilters) return '#ccc';
+
+				const value = data[dataField];
+				return typeof value === 'number' ? this.colorScale(value) : '#ccc';
+			})
 			.attr('stroke', (d) => {
 				return d.properties?.neighbourhood === get(selectedNeighbourhood) ? colorSchema[2] : '#fff';
 			})
 			.attr('stroke-width', 0.5)
+			.attr('opacity', (d) => {
+				const neighbourhood = d.properties?.neighbourhood;
+				if (!neighbourhood) return 0.5;
+
+				const data = this.data.get(neighbourhood);
+				if (!data) return 0.5;
+
+				// Check if all metrics are within their filter ranges
+				const meetsAllFilters = Object.entries(currentFilterRanges).every(([metricKey, range]) => {
+					const value = data[this.metricMapping[metricKey as keyof FilterRanges]];
+					return typeof value === 'number' && value >= range.min && value <= range.max;
+				});
+
+				return meetsAllFilters ? 1 : 0.5;
+			})
 			.on('mousedown', (_event, d) => {
 				const name = d.properties?.neighbourhood;
 				if (!name) return;
@@ -185,7 +282,11 @@ export class TorontoMap {
 			})
 			.on('mouseover', (event, d) => {
 				const neighbourhoodName = d.properties?.neighbourhood;
-				const density = this.data.get(neighbourhoodName)?.population_density;
+				const value = this.data.get(neighbourhoodName)?.[dataField];
+				const displayName = metric
+					.split('_')
+					.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+					.join(' ');
 
 				// Don't use event.layerX and event.layerY, because they may have different behavior on different browsers
 				const layerX = event.clientX - this.parentElement.getBoundingClientRect().left;
@@ -194,7 +295,7 @@ export class TorontoMap {
 				tooltip
 					.style('opacity', 1)
 					.html(
-						`${neighbourhoodName}<br><strong>Population Density:</strong> ${density ? density.toFixed(2) : 'N/A'}`
+						`${neighbourhoodName}<br><strong>${displayName}:</strong> ${typeof value === 'number' ? value.toFixed(2) : 'N/A'}`
 					)
 					.style('left', layerX + this.config.tooltip.padding + 'px')
 					.style('top', layerY + this.config.tooltip.padding + 'px');
@@ -205,11 +306,12 @@ export class TorontoMap {
 				const layerY = event.clientY - this.parentElement.getBoundingClientRect().top;
 
 				tooltip
+					.style('display', 'block')
 					.style('left', layerX + this.config.tooltip.padding + 'px')
 					.style('top', layerY + this.config.tooltip.padding + 'px');
 			})
 			.on('mouseleave', () => {
-				tooltip.style('opacity', 0);
+				tooltip.style('display', 'none').style('opacity', 0);
 			});
 
 		this.mapG
@@ -236,5 +338,93 @@ export class TorontoMap {
 		return projectedPoint
 			? [projectedPoint[0] + this.config.margin.left, projectedPoint[1] + this.config.margin.top]
 			: null;
+	}
+
+	private initializeLegend() {
+		// Initialize gradient for legend
+		this.linearGradient = this.svg
+			.append('defs')
+			.append('linearGradient')
+			.attr('id', 'legend-gradient')
+			.attr('x1', '0%')
+			.attr('y1', '0%')
+			.attr('x2', '100%')
+			.attr('y2', '0%');
+
+		// Create legend group
+		this.legendGroup = this.svg
+			.append('g')
+			.attr('class', 'legend-group')
+			.attr('transform', `translate(${this.width - 160}, ${this.height - 40})`);
+
+		// Append legend title
+		this.legendTitle = this.legendGroup
+			.append('text')
+			.attr('class', 'legend-title')
+			.attr('y', -5)
+			.attr('x', 0)
+			.style('font-size', '12px')
+			.style('font-weight', 'bold');
+
+		// Append legend rect
+		this.legendRect = this.legendGroup
+			.append('rect')
+			.attr('width', 120)
+			.attr('height', 10)
+			.style('stroke', '#ccc')
+			.style('stroke-width', '0.5px');
+
+		// Add min and max labels
+		this.legendGroup
+			.append('text')
+			.attr('class', 'min-value')
+			.attr('x', 15)
+			.attr('y', 20)
+			.style('font-size', '10px')
+			.style('text-anchor', 'end');
+
+		this.legendGroup
+			.append('text')
+			.attr('class', 'max-value')
+			.attr('x', 100)
+			.attr('y', 20)
+			.style('font-size', '10px')
+			.style('text-anchor', 'start');
+	}
+
+	private updateLegend() {
+		if (!this.legendGroup || !this.legendRect || !this.legendTitle || !this.linearGradient) return;
+
+		const metric = get(selectedMetric);
+		const dataField = this.metricMapping[metric];
+		const values = Array.from(this.data.values())
+			.map((d) => d[dataField])
+			.filter((v): v is number => typeof v === 'number');
+		const maxValue = Math.max(...values);
+		const minValue = Math.min(...values);
+
+		// Get the appropriate color schema for the current metric
+		const currentColorSchema = this.metricColorSchemas[metric];
+
+		// Update gradient stops
+		this.linearGradient.selectAll('stop').remove();
+		this.linearGradient
+			.append('stop')
+			.attr('offset', '0%')
+			.attr('stop-color', currentColorSchema[100]);
+		this.linearGradient
+			.append('stop')
+			.attr('offset', '100%')
+			.attr('stop-color', currentColorSchema[600]);
+
+		// Update legend rect fill
+		this.legendRect.attr('fill', 'url(#legend-gradient)');
+
+		// Update legend title
+		this.legendTitle.text(this.metricDisplayNames[metric]);
+
+		// Update min and max values
+		this.legendGroup.select('.min-value').text(minValue.toFixed(1));
+		this.legendGroup.select('.max-value').text(maxValue.toFixed(1));
 	}
 }
