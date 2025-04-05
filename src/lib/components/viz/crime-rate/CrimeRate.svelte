@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CrimeRateChart } from './crime-rate';
 	import * as d3 from 'd3';
-	import { cn } from '$lib/utils/utils';
+	import { cn, debounce } from '$lib/utils/utils';
 	import { base } from '$app/paths';
 	import { crimeRateSchema } from '$lib/types/data/crime-rate';
 	import { selectedNeighbourhood } from '$lib/stores/map';
@@ -9,6 +9,7 @@
 	let { class: className = '' } = $props();
 	let visContainer: HTMLElement;
 	let crimeRateChart: CrimeRateChart;
+	let previousWidth = 0;
 
 	$effect(() => {
 		if (!visContainer) return;
@@ -27,9 +28,37 @@
 			});
 
 			crimeRateChart.updateVis();
+
+			// Record initial width
+			if (visContainer) {
+				previousWidth = visContainer.getBoundingClientRect().width;
+			}
 		};
 
 		initVis();
+
+		// Debounced resize handler
+		const handleResize = debounce(() => {
+			if (crimeRateChart && visContainer) {
+				const containerRect = visContainer.getBoundingClientRect();
+				const currentWidth = containerRect.width;
+
+				// Only trigger resize if width has changed
+				if (currentWidth !== previousWidth) {
+					previousWidth = currentWidth;
+					crimeRateChart.resize(currentWidth, containerRect.height);
+					crimeRateChart.updateVis();
+				}
+			}
+		}, 250);
+
+		// Use ResizeObserver with debounced handler
+		const resizeObserver = new ResizeObserver(handleResize);
+		resizeObserver.observe(visContainer);
+
+		return () => {
+			resizeObserver.disconnect();
+		};
 	});
 
 	$effect(() => {
@@ -42,8 +71,8 @@
 </script>
 
 <div class={cn('flex flex-col', className)}>
-	<h1 class="text-center font-serif text-2xl italic">
+	<h2 class="text-center font-serif text-2xl italic">
 		Crime Rates in {$selectedNeighbourhood ?? 'Toronto'}
-	</h1>
+	</h2>
 	<div bind:this={visContainer} class="relative flex-1"></div>
 </div>

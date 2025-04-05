@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CrimeRate from '$lib/components/viz/crime-rate/CrimeRate.svelte';
 	import Maps from '$lib/components/viz/maps/Maps.svelte';
+	import Table from '$lib/components/viz/table/Table.svelte';
 	import { selectedMetric } from '$lib/stores/map';
 	import Filter from '$lib/components/Filter.svelte';
 </script>
@@ -23,11 +24,13 @@
 		<div class="order-2 flex items-center lg:order-1 lg:col-span-2 lg:row-span-2">
 			<Maps class="h-[800px] w-full" />
 		</div>
-		<div class="order-1 flex items-center lg:order-2">
+		<div class="order-1 flex items-center lg:order-2 lg:col-span-1 lg:row-span-2">
 			<Filter class="h-[400px] w-full bg-white shadow-sm" />
 		</div>
-		<div class="order-3 flex items-center bg-amber-500 lg:order-3">
-			<div class="h-[200px] w-full bg-red-300">Table</div>
+	</div>
+	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-1 lg:grid-rows-1">
+		<div class="order-3 flex items-center bg-white shadow-sm lg:order-3">
+			<Table class="h-[200px] w-full" />
 		</div>
 	</div>
 	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-2 lg:grid-rows-2">
