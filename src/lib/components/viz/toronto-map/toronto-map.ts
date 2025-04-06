@@ -82,7 +82,7 @@ export class TorontoMap {
 	};
 
 	private readonly metricDisplayNames: Record<string, string> = {
-		population_density: 'Population Density',
+		population_density: 'Population Density (per km²)',
 		household_income: 'Household Income ($)',
 		crime_rate: 'Crime Rate (per 100,000)',
 		cultural_diversity: 'Cultural Diversity Index'

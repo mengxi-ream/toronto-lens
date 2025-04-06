@@ -2,7 +2,7 @@
 	import CrimeRate from '$lib/components/viz/crime-rate/CrimeRate.svelte';
 	import Maps from '$lib/components/viz/maps/Maps.svelte';
 	import Table from '$lib/components/viz/table/Table.svelte';
-	import { selectedMetric } from '$lib/stores/map';
+	import { selectedMetric as _selectedMetric } from '$lib/stores/map';
 	import Filter from '$lib/components/Filter.svelte';
 </script>
 
@@ -13,13 +13,6 @@
 
 <section>
 	<h1 class="py-5 text-center text-4xl font-bold">Dashboard Title</h1>
-	Filter Neighbourhood Metrics:
-	<select id="metrics-selector" bind:value={$selectedMetric}>
-		<option value="population_density">Population Density</option>
-		<option value="household_income">Household Income</option>
-		<option value="crime_rate">Crime Rate</option>
-		<option value="cultural_diversity">Cultural Diversity</option>
-	</select>
 	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-3 lg:grid-rows-2">
 		<div class="order-2 flex items-center lg:order-1 lg:col-span-2 lg:row-span-2">
 			<Maps class="h-[800px] w-full" />
