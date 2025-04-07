@@ -1,8 +1,77 @@
 <script lang="ts">
 	import { Slider, Select } from 'bits-ui';
-	import { filterRanges, type FilterRanges } from '$lib/stores/filter';
+	import {
+		filterRanges,
+		type FilterRanges,
+		fallBackFilterRange,
+		rangeSteps
+	} from '$lib/stores/filter';
 	import { selectedMetric } from '$lib/stores/map';
 	import Icon from '$lib/icons/Icon.svelte';
+	import { base } from '$app/paths';
+	import { csv } from 'd3';
+	import { neighbourhoodSchema } from '$lib/types/data/neighbourhood';
+	import { onMount } from 'svelte';
+
+	// svelte-ignore non_reactive_update
+	let dataRanges = fallBackFilterRange;
+	let currentSliderValues = $state(fallBackFilterRange);
+
+	function getSliderValues(metric: keyof FilterRanges): () => [number, number] {
+		return function () {
+			return [currentSliderValues[metric].min, currentSliderValues[metric].max];
+		};
+	}
+
+	function setSliderValues(metric: keyof FilterRanges): (values: [number, number]) => void {
+		return function (values: [number, number]) {
+			currentSliderValues[metric] = { min: values[0], max: values[1] };
+		};
+	}
+
+	onMount(() => {
+		const loadData = async () => {
+			const neighbourhoodRawData = await csv(`${base}/data/processed/select-filter.csv`);
+			const neighbourhoodData = neighbourhoodRawData.map((row: unknown) =>
+				neighbourhoodSchema.parse(row)
+			);
+
+			const ranges = neighbourhoodData.reduce((acc, d) => {
+				const metrics: Record<keyof FilterRanges, number> = {
+					population_density: d.population_density,
+					household_income: d['Average after-tax income of households in 2015 ($)'],
+					crime_rate: d.overall_crime_rate,
+					cultural_diversity: d.shannon_diversity
+				};
+
+				Object.entries(metrics).forEach(([key, value]) => {
+					const typedKey = key as keyof FilterRanges;
+
+					if (!acc[typedKey]) {
+						acc[typedKey] = {
+							min: Math.floor(value / rangeSteps[typedKey]) * rangeSteps[typedKey],
+							max: Math.ceil(value / rangeSteps[typedKey]) * rangeSteps[typedKey]
+						};
+					} else {
+						acc[typedKey].min =
+							Math.floor(Math.min(acc[typedKey].min, Math.floor(value)) / rangeSteps[typedKey]) *
+							rangeSteps[typedKey];
+						acc[typedKey].max =
+							Math.ceil(Math.max(acc[typedKey].max, Math.ceil(value)) / rangeSteps[typedKey]) *
+							rangeSteps[typedKey];
+					}
+				});
+
+				return acc;
+			}, {} as FilterRanges);
+
+			$filterRanges = ranges;
+			dataRanges = ranges;
+			currentSliderValues = ranges;
+		};
+
+		loadData();
+	});
 
 	const ICONS = {
 		caretDown:
@@ -13,10 +82,10 @@
 	};
 
 	const metricDisplayNames: Record<keyof FilterRanges, string> = {
-		population_density: 'Population Density',
-		household_income: 'Household Income',
-		crime_rate: 'Overall Crime Rate',
-		cultural_diversity: 'Cultural Diversity Index'
+		population_density: 'Population density',
+		household_income: 'Household income',
+		crime_rate: 'Overall crime rate',
+		cultural_diversity: 'Cultural diversity index'
 	};
 
 	const metrics = Object.entries(metricDisplayNames).map(([value, label]) => ({
@@ -39,9 +108,8 @@
 		}
 	};
 
-	type OnValueChangeFn = (value: number[]) => void;
-	const handleValueChange = (metric: keyof FilterRanges): OnValueChangeFn => {
-		return (value) => {
+	const handleValueCommit = (metric: keyof FilterRanges) => {
+		return (value: number[]) => {
 			if (value.length === 2) {
 				// Update filterRanges directly
 				filterRanges.update((ranges) => {
@@ -55,32 +123,29 @@
 
 	const handleReset = () => {
 		// Reset all values to initial ranges
-		filterRanges.set({
-			population_density: { min: 1200, max: 50000 },
-			household_income: { min: 100000, max: 1500000 },
-			crime_rate: { min: 350, max: 5000 },
-			cultural_diversity: { min: 2.5, max: 7 }
-		});
+		$filterRanges = dataRanges;
+		currentSliderValues = dataRanges;
 	};
 </script>
 
-<div>
-	<div class="flex flex-col gap-4 rounded-lg border border-purple-100 bg-white p-4 shadow-sm">
-		<h3 class="text-lg font-semibold">Filter Neighbourhood Metrics</h3>
+<div class="mx-auto flex flex-col gap-4 rounded-lg px-2 pb-2">
+	<div class="flex items-center justify-between">
 		<Select.Root type="single" onValueChange={(v) => ($selectedMetric = v)} items={metrics}>
 			<Select.Trigger
-				class="h-input inline-flex w-full items-center rounded-md border border-purple-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors select-none hover:border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none data-placeholder:text-gray-500"
+				class="h-input inline-flex w-50 items-center rounded-md border border-purple-200 bg-white px-2 py-1.5 text-sm font-medium text-gray-700 transition-colors select-none hover:border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none data-placeholder:text-gray-500"
 				aria-label="Select a metric"
 			>
-				<Icon path={ICONS.list} class="mr-2 text-purple-500" size={20} />
-				{$selectedMetric
-					? metricDisplayNames[$selectedMetric as keyof FilterRanges]
-					: 'Select a metric'}
-				<Icon path={ICONS.caretDown} class="ml-auto text-purple-500" size={20} />
+				<Icon path={ICONS.list} class="mr-2 text-purple-500" size={16} />
+				<span class="font-sm text-sm">
+					{$selectedMetric
+						? metricDisplayNames[$selectedMetric as keyof FilterRanges]
+						: 'Select a metric'}
+				</span>
+				<Icon path={ICONS.caretDown} class="ml-auto text-purple-500" size={16} />
 			</Select.Trigger>
 			<Select.Portal>
 				<Select.Content
-					class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-[var(--bits-select-content-available-height)] w-[var(--bits-select-trigger-width)] min-w-[var(--bits-select-trigger-width)] rounded-md border border-purple-100 bg-white p-1 shadow-lg select-none"
+					class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-[var(--bits-select-content-available-height)] w-50 min-w-[var(--bits-select-trigger-width)] rounded-md border border-purple-100 bg-white p-1 shadow-lg select-none"
 					sideOffset={5}
 				>
 					<Select.Viewport class="p-1">
@@ -104,76 +169,54 @@
 				</Select.Content>
 			</Select.Portal>
 		</Select.Root>
-		<div class="flex items-center justify-between">
-			<h3 class="text-lg font-semibold">Filter Neighbourhoods</h3>
-			<div class="flex gap-2">
-				<button
-					class="rounded-md bg-purple-100 px-3 py-1 text-sm font-medium text-purple-700 hover:bg-purple-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none"
-					onclick={handleReset}
-				>
-					Reset
-				</button>
-			</div>
-		</div>
-		{#each Object.entries($filterRanges) as [metric, range]}
-			{@const key = metric as keyof FilterRanges}
-			<div class="flex flex-col gap-2">
-				<div class="flex items-center justify-between">
-					<span class="text-sm font-medium">{metricDisplayNames[key]}</span>
-					<span class="text-xs text-gray-500">
-						{formatValue(key, range.min)} - {formatValue(key, range.max)}
-					</span>
-				</div>
-				<Slider.Root
-					type="multiple"
-					min={key === 'household_income'
-						? 100000
-						: key === 'population_density'
-							? 1200
-							: key === 'crime_rate'
-								? 350
-								: 2.5}
-					max={key === 'household_income'
-						? 1500000
-						: key === 'population_density'
-							? 50000
-							: key === 'crime_rate'
-								? 5000
-								: 7}
-					step={key === 'cultural_diversity' ? 0.1 : key === 'household_income' ? 10000 : 100}
-					value={[range.min, range.max]}
-					onValueChange={handleValueChange(key)}
-					class="relative flex w-full touch-none items-center select-none"
-				>
-					{#snippet children()}
-						<span
-							class="relative h-1.5 w-full grow cursor-pointer overflow-hidden rounded-full bg-purple-100"
-						>
-							<Slider.Range class="absolute h-full bg-purple-500" />
-						</span>
-						<Slider.Thumb
-							index={0}
-							class="group relative block h-4 w-4 cursor-pointer rounded-full border border-purple-500 bg-white shadow-sm transition-colors hover:border-purple-600 focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
-						>
-							<div
-								class="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded bg-gray-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"
-							>
-								{formatValue(key, range.min)}
-							</div>
-						</Slider.Thumb>
-						<Slider.Thumb
-							index={1}
-							class="group relative block h-4 w-4 cursor-pointer rounded-full border border-purple-500 bg-white shadow-sm transition-colors hover:border-purple-600 focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
-						>
-							<div
-								class="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded bg-gray-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"
-							>
-								{formatValue(key, range.max)}
-							</div>
-						</Slider.Thumb>
-					{/snippet}
-				</Slider.Root>
-			</div>
-		{/each}
+		<button
+			class="rounded-md bg-purple-100 px-2.5 py-1 text-purple-700 hover:bg-purple-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none"
+			onclick={handleReset}
+		>
+			<span class="text-sm">Reset</span>
+		</button>
 	</div>
+	{#each Object.entries($filterRanges) as [metric, range]}
+		{@const key = metric as keyof FilterRanges}
+		<div class="flex flex-col gap-2">
+			<div class="flex items-center justify-between">
+				<span class="text-sm font-medium">{metricDisplayNames[key]}</span>
+				<span class="text-sm text-gray-500">
+					{formatValue(key, range.min)} - {formatValue(key, range.max)}
+				</span>
+			</div>
+			<Slider.Root
+				type="multiple"
+				min={dataRanges[key].min}
+				max={dataRanges[key].max}
+				step={rangeSteps[key]}
+				bind:value={getSliderValues(key), setSliderValues(key)}
+				onValueCommit={handleValueCommit(key)}
+				class="relative flex w-76 touch-none items-center select-none"
+			>
+				{#snippet children({ thumbs })}
+					<span
+						class="relative h-1.5 w-full grow cursor-pointer overflow-hidden rounded-full bg-purple-100"
+					>
+						<Slider.Range class="absolute h-full bg-purple-500" />
+					</span>
+					{#each thumbs as index}
+						<Slider.Thumb
+							{index}
+							class="group relative block h-4 w-4 cursor-pointer rounded-full border border-purple-500 bg-white shadow-sm transition-colors hover:border-purple-600 focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+						>
+							<div
+								class="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded bg-gray-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"
+							>
+								{formatValue(
+									key,
+									index === 0 ? currentSliderValues[key].min : currentSliderValues[key].max
+								)}
+							</div>
+						</Slider.Thumb>
+					{/each}
+				{/snippet}
+			</Slider.Root>
+		</div>
+	{/each}
 </div>

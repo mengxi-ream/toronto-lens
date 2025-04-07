@@ -64,13 +64,10 @@
 	});
 </script>
 
-<div
-	class={cn('flex w-full flex-col', className)}
-	style="height: 400px; background-color: #befabe; border-radius: 0.75rem;"
->
-	<h3 class="mb-1 p-2 text-center text-lg font-semibold">Matching Neighbourhoods</h3>
+<div class={cn('flex w-full flex-col rounded-lg bg-green-300', className)}>
+	<h3 class="py-0.5 text-center text-sm font-medium">Matching Neighbourhoods</h3>
 	<div
 		bind:this={visContainer}
-		class="relative w-full flex-1 overflow-auto rounded-lg border border-gray-200 bg-white shadow-md"
+		class="relative w-full flex-1 overflow-auto rounded-lg bg-white"
 	></div>
 </div>

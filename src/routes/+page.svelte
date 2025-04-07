@@ -4,6 +4,7 @@
 	import Table from '$lib/components/viz/table/Table.svelte';
 	import { selectedMetric as _selectedMetric } from '$lib/stores/map';
 	import Filter from '$lib/components/Filter.svelte';
+	import Title from '$lib/components/Title.svelte';
 </script>
 
 <svelte:head>
@@ -12,18 +13,20 @@
 </svelte:head>
 
 <section>
-	<h1 class="py-5 text-center text-4xl font-bold">Dashboard Title</h1>
-	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-3 lg:grid-rows-2">
-		<div class="order-2 flex items-center lg:order-1 lg:col-span-2 lg:row-span-2">
-			<Maps class="h-[800px] w-full" />
+	<Title />
+	<div class="grid w-full grid-cols-1 py-4 lg:grid-cols-2 lg:grid-rows-2">
+		<div
+			class="border-grid order-2 flex items-center border-r-0 border-b p-4 lg:order-1 lg:col-span-1 lg:row-span-2 lg:border-r-1"
+		>
+			<Maps class="h-[560px] w-full" />
 		</div>
-		<div class="order-1 flex items-center lg:order-2 lg:col-span-1 lg:row-span-2">
-			<Filter class="h-[400px] w-full bg-white shadow-sm" />
+		<div
+			class="border-grid order-1 flex items-center border-b p-4 lg:order-2 lg:col-span-1 lg:row-span-1"
+		>
+			<Filter />
 		</div>
-	</div>
-	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-1 lg:grid-rows-1">
-		<div class="order-3 flex items-center bg-white shadow-sm lg:order-3">
-			<Table class="h-[200px] w-full" />
+		<div class="border-grid relative order-3 flex h-[296px] items-center border-b p-4 lg:order-3">
+			<Table class="h-full w-full" />
 		</div>
 	</div>
 	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-2 lg:grid-rows-2">

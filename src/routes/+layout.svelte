@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex min-h-[100vh] flex-col">
-	<main class="mx-auto w-full max-w-6xl px-6 md:px-14">
+	<main class="mx-auto w-full max-w-7xl px-6 md:px-14">
 		{@render children()}
 	</main>
 </div>

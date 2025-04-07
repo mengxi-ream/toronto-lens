@@ -63,13 +63,20 @@ export class Maps {
 		if (!worldMapElement || !torontoMapElement) {
 			throw new Error('Map elements not found');
 		}
-		this.worldMap = new WorldMap(worldMapElement, this.immigrationData);
+		this.worldMap = new WorldMap(worldMapElement, this.immigrationData, {
+			margin: {
+				top: 0,
+				right: 0,
+				bottom: 0,
+				left: 0
+			}
+		});
 		this.torontoMap = new TorontoMap(torontoMapElement, neighbourhoodData, {
 			margin: {
-				top: 10,
-				right: 10,
-				bottom: 60,
-				left: 10
+				top: 0,
+				right: 0,
+				bottom: 10,
+				left: 0
 			}
 		});
 	}

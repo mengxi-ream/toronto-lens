@@ -28,8 +28,7 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
+.border-grid {
+	border-style: dashed;
+	border-color: var(--color-bg-1);
 }

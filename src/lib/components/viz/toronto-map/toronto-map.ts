@@ -330,7 +330,7 @@ export class TorontoMap {
 
 	public getCenterPosition(name: string): [number, number] | null {
 		if (name === 'City of Toronto') {
-			return [this.width / 2, this.height];
+			return [this.width / 2, this.height * 0.95];
 		}
 		const centerPoint = this.centerPoints.get(name);
 		if (!centerPoint) return null;

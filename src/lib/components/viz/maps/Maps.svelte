@@ -71,7 +71,5 @@
 </script>
 
 <div class={cn('flex flex-col', className)}>
-	<h2 class="py-2 text-center text-2xl font-semibold">Toronto</h2>
 	<div bind:this={visContainer} class="relative flex-1"></div>
-	<h2 class="py-2 text-center text-2xl font-semibold">World</h2>
 </div>
