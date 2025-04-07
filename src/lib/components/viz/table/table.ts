@@ -156,9 +156,13 @@ export class Table {
 
 			const row = this.tbody
 				.append('tr')
+				.attr(
+					'class',
+					cn(isSelected ? 'bg-indigo-50' : '', index % 2 === 0 ? 'bg-white' : 'bg-indigo-50')
+				)
 				.style('height', '40px')
 				.style('transition', 'all 0.2s ease')
-				.style('background-color', isSelected ? '#e0f2fe' : index % 2 === 0 ? 'white' : '#f0faf0')
+				// .style('background-color', isSelected ? '#e0f2fe' : index % 2 === 0 ? 'white' : '#f0faf0')
 				.style('cursor', 'pointer')
 				.on('click', () => {
 					// Update selectedNeighbourhood store when a row is clicked

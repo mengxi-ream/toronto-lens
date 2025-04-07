@@ -20,9 +20,10 @@ import { get } from 'svelte/store';
 import {
 	colorSchema,
 	sequentialColorSchema,
-	orangeSequentialColorSchema,
 	purpleSequentialColorSchema,
-	cyanSequentialColorSchema
+	cyanSequentialColorSchema,
+	greenSequentialColorSchema,
+	yellowSequentialColorSchema
 } from '$lib/utils/colorSchema';
 import type { TorontoMapConfig } from '$lib/types/chart/layout';
 import { findOptimalCenterPoint } from '$lib/utils/map';
@@ -60,6 +61,7 @@ export class TorontoMap {
 	private height: number;
 	private svg: Selection<SVGSVGElement, unknown, null, undefined>;
 	private mapG: Selection<SVGGElement, unknown, null, undefined>;
+	private titleText: Selection<SVGTextElement, unknown, null, undefined>;
 	private projection: GeoProjection;
 	private path: GeoPath;
 	private topoData: TopoData | null = null;
@@ -89,8 +91,8 @@ export class TorontoMap {
 	};
 
 	private readonly metricColorSchemas: Record<string, typeof sequentialColorSchema> = {
-		population_density: sequentialColorSchema,
-		household_income: orangeSequentialColorSchema,
+		population_density: greenSequentialColorSchema,
+		household_income: yellowSequentialColorSchema,
 		crime_rate: purpleSequentialColorSchema,
 		cultural_diversity: cyanSequentialColorSchema
 	};
@@ -113,6 +115,16 @@ export class TorontoMap {
 			.append('svg')
 			.attr('width', containerRect.width)
 			.attr('height', containerRect.height);
+
+		// Add title to the top of the map
+		this.titleText = this.svg
+			.append('text')
+			.attr('class', 'text-sm font-semibold text-gray-600')
+			.attr('x', containerRect.width / 2)
+			.attr('y', this.config.margin.top + 12)
+			.attr('text-anchor', 'middle')
+			.text('City of Toronto');
+
 		this.mapG = this.svg
 			.append('g')
 			.attr('transform', `translate(${this.config.margin.left},${this.config.margin.top})`);
@@ -170,6 +182,9 @@ export class TorontoMap {
 		this.height = height - this.config.margin.top - this.config.margin.bottom;
 
 		this.svg.attr('width', width).attr('height', height).attr('viewBox', `0 0 ${width} ${height}`);
+
+		// Update title position on resize
+		this.titleText.attr('x', width / 2);
 
 		// Update legend position on resize
 		if (this.legendGroup) {

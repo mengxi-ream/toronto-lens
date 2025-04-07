@@ -66,3 +66,31 @@ export const cyanSequentialColorSchema = {
 	900: '#002633',
 	950: '#001319'
 };
+
+export const greenSequentialColorSchema = {
+	50: '#ecfdf4',
+	100: '#d1f9e4',
+	200: '#a7f0ce',
+	300: '#6ee6af',
+	400: '#3cc780',
+	500: '#1ba55f',
+	600: '#0e864d',
+	700: '#0c6b3f',
+	800: '#0c5334',
+	900: '#0a442c',
+	950: '#05261a'
+};
+
+export const yellowSequentialColorSchema = {
+	50: '#fffceb',
+	100: '#fff7c8',
+	200: '#ffef8c',
+	300: '#ffe14c',
+	400: '#ffc400',
+	500: '#e6a900',
+	600: '#cc8000',
+	700: '#a35900',
+	800: '#804500',
+	900: '#663500',
+	950: '#331a00'
+};
