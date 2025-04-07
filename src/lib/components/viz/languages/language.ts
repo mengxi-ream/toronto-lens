@@ -134,10 +134,19 @@ export class LanguageChart {
 			.append('text')
 			.attr('class', 'axis-label text-xs')
 			.attr('transform', 'rotate(-90)')
-			.attr('y', -70)
+			.attr('y', -60)
 			.attr('x', -this.height / 2)
 			.style('text-anchor', 'middle')
 			.text('Population');
+
+		// Add x-axis label
+		this.chart
+			.append('text')
+			.attr('class', 'axis-label text-xs')
+			.attr('y', this.height + 55)
+			.attr('x', this.width / 2)
+			.style('text-anchor', 'middle')
+			.text('Language');
 
 		this.xScale = scaleBand()
 			.domain(entries.map((d) => d.language))
