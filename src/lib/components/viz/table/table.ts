@@ -202,7 +202,7 @@ export class Table {
 					.attr(
 						'class',
 						cn(
-							'max-w-[80px] whitespace-normal break-words border-r border-gray-200 text-sm text-center',
+							'max-w-[80px] whitespace-normal break-words border-r border-gray-200 text-xs text-center',
 							isSelected ? 'bg-blue-50 text-blue-500' : ''
 						)
 					)

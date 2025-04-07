@@ -20,8 +20,8 @@
 
 			crimeRateChart = new CrimeRateChart(visContainer, data, {
 				margin: {
-					top: 40,
-					right: 100,
+					top: 20,
+					right: 90,
 					bottom: 40,
 					left: 60
 				}
@@ -71,7 +71,7 @@
 </script>
 
 <div class={cn('flex flex-col', className)}>
-	<h2 class="text-center font-serif text-2xl italic">
+	<h2 class="text-center text-sm font-semibold">
 		Crime Rates in {$selectedNeighbourhood ?? 'Toronto'}
 	</h2>
 	<div bind:this={visContainer} class="relative flex-1"></div>

@@ -355,16 +355,15 @@ export class TorontoMap {
 		this.legendGroup = this.svg
 			.append('g')
 			.attr('class', 'legend-group')
-			.attr('transform', `translate(${this.width - 160}, ${this.height - 40})`);
+			.attr('transform', `translate(${this.width - 180}, ${this.height - 40})`);
 
 		// Append legend title
 		this.legendTitle = this.legendGroup
 			.append('text')
-			.attr('class', 'legend-title')
+			.attr('class', 'legend-title semibold')
 			.attr('y', -5)
 			.attr('x', 0)
-			.style('font-size', '12px')
-			.style('font-weight', 'bold');
+			.style('font-size', '12px');
 
 		// Append legend rect
 		this.legendRect = this.legendGroup

@@ -65,7 +65,7 @@
 </script>
 
 <div class={cn('flex w-full flex-col rounded-lg bg-green-300', className)}>
-	<h3 class="py-0.5 text-center text-sm font-medium">Matching Neighbourhoods</h3>
+	<h2 class="py-0.5 text-center text-sm font-medium">Matching Neighbourhoods</h2>
 	<div
 		bind:this={visContainer}
 		class="relative w-full flex-1 overflow-auto rounded-lg bg-white"

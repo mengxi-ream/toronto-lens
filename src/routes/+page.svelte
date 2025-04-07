@@ -14,7 +14,7 @@
 
 <section>
 	<Title />
-	<div class="grid w-full grid-cols-1 py-4 lg:grid-cols-2 lg:grid-rows-2">
+	<div class="grid w-full grid-cols-1 pt-4 lg:grid-cols-2 lg:grid-rows-2">
 		<div
 			class="border-grid order-2 flex items-center border-r-0 border-b p-4 lg:order-1 lg:col-span-1 lg:row-span-2 lg:border-r-1"
 		>
@@ -29,12 +29,12 @@
 			<Table class="h-full w-full" />
 		</div>
 	</div>
-	<div class="grid w-full grid-cols-1 gap-4 py-4 lg:grid-cols-2 lg:grid-rows-2">
-		<div class="col-span-1 flex items-center">
-			<CrimeRate class="h-[400px] w-full" />
+	<div class="grid w-full grid-cols-1 lg:grid-cols-2 lg:grid-rows-1">
+		<div class="border-grid col-span-1 flex items-center border-b p-4 lg:border-r lg:border-b-0">
+			<CrimeRate class="h-[300px] w-full" />
 		</div>
-		<div class="flex items-center bg-amber-500">
-			<div class="h-[400px] w-full bg-red-300">Language chart</div>
+		<div class="flex items-center p-4">
+			<div class="h-[300px] w-full bg-red-300">Language chart</div>
 		</div>
 	</div>
 </section>

@@ -82,7 +82,7 @@ export class CrimeRateChart {
 		// Add axis labels
 		this.chart
 			.append('text')
-			.attr('class', 'axis-label')
+			.attr('class', 'axis-label text-xs')
 			.attr('y', this.height + 35)
 			.attr('x', this.width / 2)
 			.style('text-anchor', 'middle')
@@ -90,7 +90,7 @@ export class CrimeRateChart {
 
 		this.chart
 			.append('text')
-			.attr('class', 'axis-label')
+			.attr('class', 'axis-label text-xs')
 			.attr('transform', 'rotate(-90)')
 			.attr('y', -45)
 			.attr('x', -this.height / 2)
