@@ -176,18 +176,11 @@ export class Table {
 				})
 				.on('mouseover', function () {
 					select(this)
-						.style('background-color', isSelected ? '#bae6fd' : '#f1f5f9')
 						.style('transform', 'translateY(-1px)')
 						.style('box-shadow', '0 2px 4px rgba(0,0,0,0.05)');
 				})
 				.on('mouseout', function () {
-					select(this)
-						.style(
-							'background-color',
-							isSelected ? '#e0f2fe' : index % 2 === 0 ? 'white' : '#f0faf0'
-						)
-						.style('transform', 'translateY(0)')
-						.style('box-shadow', 'none');
+					select(this).style('transform', 'translateY(0)').style('box-shadow', 'none');
 				});
 
 			// Values for each cell
