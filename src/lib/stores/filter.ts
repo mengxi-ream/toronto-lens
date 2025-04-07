@@ -20,7 +20,7 @@ export const rangeSteps = {
 };
 
 export const fallBackFilterRange: FilterRanges = {
-	population_density: { min: 0, max: 50000 },
+	population_density: { min: 0, max: 0 },
 	household_income: { min: 0, max: 0 },
 	crime_rate: { min: 0, max: 0 },
 	cultural_diversity: { min: 0, max: 0 }
