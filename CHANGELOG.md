@@ -1,8 +1,8 @@
 # Changelog
 
-<a name="v1.0-prerelease"></a>
+<a name="1.0.0"></a>
 
-## v1.0-prerelease (2025-04-07)
+## 1.0.0 (2025-04-07)
 
 ### Added
 
@@ -24,6 +24,11 @@
 - 💄 chore: add more dots [0b2f037]
 - ♻️ refactor: add types and color schema (#14) [4e7e3cd]
 
+### Removed
+
+- 🔥 chore: remove svelte favicon [f354459]
+- 🔥 chore: remove svelte favicon [4d2ad8c]
+
 ### Fixed
 
 - 🐛 fix: reclean language data [4443683]
@@ -33,6 +38,7 @@
 
 ### Miscellaneous
 
+- 📝 docs: add changelog [0e32ee3]
 - 🩹 chore: update readme [fceddca]
 - 🩹 chore: update contact info [1e82cb3]
 - 🩹 chore: correct fallBackFilterRange [efac4cc]
