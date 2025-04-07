@@ -16,7 +16,7 @@
 		if (!visContainer) return;
 
 		const initVis = async () => {
-			const csvRaw = await d3.csv(`${base}/data/processed/mother-tongue-2016.csv`);
+			const csvRaw = await d3.csv(`${base}/data/processed/filtered_languages.csv`);
 			rawData = csvRaw.map((row) => {
 				const converted: Record<string, string | number> = { ...row };
 				for (const key in converted) {
