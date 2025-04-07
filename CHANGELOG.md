@@ -1,20 +1,47 @@
 # Changelog
 
-<a name="0.0.3"></a>
+<a name="v1.0-prerelease"></a>
 
-## 0.0.3 (2025-03-11)
+## v1.0-prerelease (2025-04-07)
 
 ### Added
 
+- ✨ feat: add thumbnail [9cbedb6]
+- ✨ feat: add legend for world map (#29) [d0a1f04]
+- ✨ feat: added language chart (#28) [66169bc]
+- ✨ feat: made the selector prettier (#24) [41b3b8c]
+- ✨ feat: added summary table and fixed scatterplot resize and legend bugs [9ee27ca]
+- ✨ feat: added filter metrics and a colour legend, removed bad codes (#22) [cc55f31]
+- ✨ refactor: added zod and animation for Crimerate chart (#18) [800c8e1]
 - ✨ feat: added tooltip and legend functions for crime-rate chart (#15) [0de7792]
 
 ### Changed
 
+- 💄 style: fix neighourhoods ui [f3c3368]
+- 💄 style: improve language chart layout [83931c8]
+- 💄 style: change color back to purple [8b47023]
+- 💄 style: mouse over table [f241882]
+- 💄 chore: add more dots [0b2f037]
 - ♻️ refactor: add types and color schema (#14) [4e7e3cd]
 
-### WIP
+### Fixed
 
-- PR: https://github.students.cs.ubc.ca/CPSC447-2024W-T2/g15/pull/16
+- 🐛 fix: reclean language data [4443683]
+- 🐛 fix: fix language resize [0821225]
+- 🐛 fix: replace layerX with clientX - left (#20) [fb8ca6b]
+- 🐛 fix: load map [bd415cd]
+
+### Miscellaneous
+
+- 🩹 chore: update readme [fceddca]
+- 🩹 chore: update contact info [1e82cb3]
+- 🩹 chore: correct fallBackFilterRange [efac4cc]
+- Feat/improve chart except language chart (#27) [6e068d2]
+- feat: bottom layout improve (#26) [85a210c]
+- feat: layout improve and filter performance improve (#25) [e1fd4aa]
+- feat: link map (#19) [7aa4ff0]
+- 👷 ci: upload to build branch [1621675]
+- 📝 docs: add changelog [0343694]
 
 <a name="0.0.2"></a>
 
