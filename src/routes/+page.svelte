@@ -5,6 +5,7 @@
 	import { selectedMetric as _selectedMetric } from '$lib/stores/map';
 	import Filter from '$lib/components/Filter.svelte';
 	import Title from '$lib/components/Title.svelte';
+	import Languages from '$lib/components/viz/languages/Languages.svelte';
 </script>
 
 <svelte:head>
@@ -34,7 +35,7 @@
 			<CrimeRate class="h-[300px] w-full" />
 		</div>
 		<div class="flex items-center p-4">
-			<div class="h-[300px] w-full bg-red-300">Language chart</div>
+			<Languages class="h-[300px] w-full" />
 		</div>
 	</div>
 </section>

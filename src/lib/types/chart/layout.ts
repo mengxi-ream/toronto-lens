@@ -49,3 +49,14 @@ export interface CrimeRateConfig extends LayoutConfig {
 		radius: number;
 	};
 }
+
+export interface LanguageConfig extends LayoutConfig {
+	tooltip?: {
+		padding: number;
+	};
+	legend?: {
+		width: number;
+		height: number;
+		radius: number;
+	};
+}
