@@ -44,28 +44,6 @@ export class LanguageChart {
 		this.width = containerRect.width - this.config.margin.left - this.config.margin.right;
 		this.height = containerRect.height - this.config.margin.top - this.config.margin.bottom;
 
-		const { margin } = this.config;
-
-		// Create new SVG container
-		this.svg = select(this.parentElement)
-			.append('svg')
-			.attr('width', this.width + margin.left + margin.right)
-			.attr('height', this.height + margin.top + margin.bottom);
-
-		this.chart = this.svg
-			.append('g')
-			.attr('transform', `translate(${margin.left + 20},${margin.top})`);
-
-		// Add y-axis label
-		this.chart
-			.append('text')
-			.attr('class', 'axis-label text-xs')
-			.attr('transform', 'rotate(-90)')
-			.attr('y', -70)
-			.attr('x', -this.height / 2)
-			.style('text-anchor', 'middle')
-			.text('Population');
-
 		// Initialize tooltip attached to container instead of body
 		select(this.parentElement)
 			.append('div')
@@ -135,6 +113,31 @@ export class LanguageChart {
 			.map(([language, value]) => ({ language, value: +value }))
 			.sort((a, b) => b.value - a.value)
 			.slice(0, 10);
+
+		const { margin } = this.config;
+
+		// clear svg
+		select(this.parentElement).selectAll('svg').remove();
+
+		// Create new SVG container
+		this.svg = select(this.parentElement)
+			.append('svg')
+			.attr('width', this.width + margin.left + margin.right)
+			.attr('height', this.height + margin.top + margin.bottom);
+
+		this.chart = this.svg
+			.append('g')
+			.attr('transform', `translate(${margin.left + 20},${margin.top})`);
+
+		// Add y-axis label
+		this.chart
+			.append('text')
+			.attr('class', 'axis-label text-xs')
+			.attr('transform', 'rotate(-90)')
+			.attr('y', -70)
+			.attr('x', -this.height / 2)
+			.style('text-anchor', 'middle')
+			.text('Population');
 
 		this.xScale = scaleBand()
 			.domain(entries.map((d) => d.language))
@@ -219,15 +222,5 @@ export class LanguageChart {
 
 		// Y Axis with formatted ticks
 		this.chart.append('g').call(createYAxisGenerator());
-
-		// Add y-axis label
-		// this.chart
-		// 	.append('text')
-		// 	.attr('class', 'axis-label text-xs')
-		// 	.attr('transform', 'rotate(-90)')
-		// 	.attr('y', -45)
-		// 	.attr('x', -this.height / 2)
-		// 	.style('text-anchor', 'middle')
-		// 	.text('Population');
 	}
 }
