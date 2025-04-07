@@ -64,7 +64,7 @@
 	});
 </script>
 
-<div class={cn('flex w-full flex-col rounded-lg bg-indigo-300', className)}>
+<div class={cn('flex w-full flex-col rounded-lg bg-purple-300', className)}>
 	<h2 class="py-0.5 text-center text-xs font-medium">Matching Neighbourhoods</h2>
 	<div
 		bind:this={visContainer}

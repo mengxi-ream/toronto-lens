@@ -158,7 +158,7 @@ export class Table {
 				.append('tr')
 				.attr(
 					'class',
-					cn(isSelected ? 'bg-indigo-50' : '', index % 2 === 0 ? 'bg-white' : 'bg-indigo-50')
+					cn(isSelected ? 'bg-purple-50' : '', index % 2 === 0 ? 'bg-white' : 'bg-purple-50')
 				)
 				.style('height', '40px')
 				.style('transition', 'all 0.2s ease')

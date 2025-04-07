@@ -146,33 +146,33 @@
 			items={metrics}
 		>
 			<Select.Trigger
-				class="h-input inline-flex w-54 items-center rounded-md border border-indigo-200 bg-white px-2 py-1.5 text-sm font-medium text-gray-700 transition-colors select-none hover:border-indigo-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none data-placeholder:text-gray-500"
+				class="h-input inline-flex w-54 items-center rounded-md border border-purple-200 bg-white px-2 py-1.5 text-sm font-medium text-gray-700 transition-colors select-none hover:border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none data-placeholder:text-gray-500"
 				aria-label="Select a metric"
 			>
-				<Search size={16} class="mr-2 text-indigo-500" />
+				<Search size={16} class="mr-2 text-purple-500" />
 				<span class="font-sm text-sm">
 					{$selectedMetric
 						? metricDisplayNames[$selectedMetric as keyof FilterRanges]
 						: 'Select a metric'}
 				</span>
-				<Icon path={ICONS.caretDown} class="ml-auto text-indigo-500" size={16} />
+				<Icon path={ICONS.caretDown} class="ml-auto text-purple-500" size={16} />
 			</Select.Trigger>
 			<Select.Portal>
 				<Select.Content
-					class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-[var(--bits-select-content-available-height)] w-54 min-w-[var(--bits-select-trigger-width)] rounded-md border border-indigo-100 bg-white p-1 shadow-lg select-none"
+					class="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-[var(--bits-select-content-available-height)] w-54 min-w-[var(--bits-select-trigger-width)] rounded-md border border-purple-100 bg-white p-1 shadow-lg select-none"
 					sideOffset={5}
 				>
 					<Select.Viewport class="p-1">
 						{#each metrics as metric}
 							<Select.Item
-								class="flex h-9 w-full items-center rounded-md px-4 py-2 text-sm text-gray-700 outline-hidden select-none data-highlighted:bg-indigo-50 data-highlighted:text-indigo-900"
+								class="flex h-9 w-full items-center rounded-md px-4 py-2 text-sm text-gray-700 outline-hidden select-none data-highlighted:bg-purple-50 data-highlighted:text-purple-900"
 								value={metric.value}
 								label={metric.label}
 							>
 								{#snippet children({ selected })}
 									{#if selected}
 										<div class="mr-2">
-											<Icon path={ICONS.check} class="text-indigo-500" size={16} />
+											<Icon path={ICONS.check} class="text-purple-500" size={16} />
 										</div>
 									{/if}
 									{metric.label}
@@ -184,7 +184,7 @@
 			</Select.Portal>
 		</Select.Root>
 		<button
-			class="rounded-md bg-indigo-100 px-2.5 py-1 text-indigo-700 hover:bg-indigo-200 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none"
+			class="rounded-md bg-purple-100 px-2.5 py-1 text-purple-700 hover:bg-purple-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-none"
 			onclick={handleReset}
 		>
 			<span class="text-sm">Reset</span>
@@ -198,12 +198,12 @@
 					<span class="text-sm font-medium">{metricDisplayNames[key]}</span>
 					<Tooltip.Provider>
 						<Tooltip.Root delayDuration={200}>
-							<Tooltip.Trigger class="inline-flex items-center justify-center text-indigo-500">
+							<Tooltip.Trigger class="inline-flex items-center justify-center text-purple-500">
 								<Icon path={ICONS.info} size={16} />
 							</Tooltip.Trigger>
 							<Tooltip.Content sideOffset={5} class="z-50 max-w-[300px]">
 								<div
-									class="rounded-md border border-indigo-100 bg-white p-2 text-xs text-gray-700 shadow-md"
+									class="rounded-md border border-purple-100 bg-white p-2 text-xs text-gray-700 shadow-md"
 								>
 									{metricDescriptions[key]}
 								</div>
@@ -226,14 +226,14 @@
 			>
 				{#snippet children({ thumbs })}
 					<span
-						class="relative h-1.5 w-full grow cursor-pointer overflow-hidden rounded-full bg-indigo-100"
+						class="relative h-1.5 w-full grow cursor-pointer overflow-hidden rounded-full bg-purple-100"
 					>
-						<Slider.Range class="absolute h-full bg-indigo-500" />
+						<Slider.Range class="absolute h-full bg-purple-500" />
 					</span>
 					{#each thumbs as index}
 						<Slider.Thumb
 							{index}
-							class="group relative block h-4 w-4 cursor-pointer rounded-full border border-indigo-500 bg-white shadow-sm transition-colors hover:border-indigo-600 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+							class="group relative block h-4 w-4 cursor-pointer rounded-full border border-purple-500 bg-white shadow-sm transition-colors hover:border-purple-600 focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
 						>
 							<div
 								class="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded bg-gray-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"
