@@ -64,7 +64,6 @@ export class Table {
 			.style('overflow-x', 'auto')
 			.style('background-color', 'white')
 			.style('position', 'relative')
-			.style('border-radius', '0.75rem')
 			.style('border', '1px solid #e2e8f0');
 
 		// Remove any existing content
