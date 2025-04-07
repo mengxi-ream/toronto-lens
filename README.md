@@ -1,6 +1,11 @@
 # CPSC447 Project
 
-D3 Visualization for UBC CPSC447
+**Toronto Neighbourhood Lens** - D3 Visualization for UBC CPSC447
+
+Are you moving to 🇨🇦 Toronto? Where should you settle down? Explore the neighborhoods with our
+interactive map and table.
+
+![Toronto Neighbourhood Lens](./thumbnail.png)
 
 [Live Demo](https://pages.github.students.cs.ubc.ca/kzhang48/cpsc447-g15/)
 
