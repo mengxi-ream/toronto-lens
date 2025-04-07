@@ -48,7 +48,7 @@ Please note that if you are using VSCode Live Server to view the website, you sh
 ## TA: Please Read This
 
 > [!CAUTION]
-> If you are teaching staff and have any questions regarding the index.html entry point, or if you are unable to load data and charts similar to the live demo, it is likely that you did not follow the instructions provided above correctly. Please contact Kuiliang Zhang at kzhang48@student.ubc.ca for assistance.
+> If you are teaching staff and have any questions regarding the index.html entry point, or if you are unable to load data and charts similar to the live demo, it is likely that you did not follow the instructions provided above correctly. Please contact Kuiliang Zhang at contact@mengxi.work for assistance.
 
 ## How to deploy
 
