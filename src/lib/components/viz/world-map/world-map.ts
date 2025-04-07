@@ -61,6 +61,11 @@ export class WorldMap {
 	private filteredData: ImmigrationData[] = [];
 	private countryCountMap: Map<string, number> = new Map();
 	private colorScale: ScaleLinear<string, string>;
+	private legendGroup: Selection<SVGGElement, unknown, null, undefined> | null = null;
+	private legendRect: Selection<SVGRectElement, unknown, null, undefined> | null = null;
+	private legendTitle: Selection<SVGTextElement, unknown, null, undefined> | null = null;
+	private linearGradient: Selection<SVGLinearGradientElement, unknown, null, undefined> | null =
+		null;
 
 	constructor(
 		parentElement: HTMLElement,
@@ -90,6 +95,9 @@ export class WorldMap {
 		this.colorScale = scaleLinear<string>()
 			.range([sequentialColorSchema[100], sequentialColorSchema[600]])
 			.interpolate(interpolateRgb);
+
+		// Initialize the legend
+		this.initializeLegend();
 
 		this.updateVis();
 	}
@@ -142,6 +150,9 @@ export class WorldMap {
 		];
 
 		this.colorScale.domain([validExtent[0], validExtent[1]]);
+
+		// Update legend
+		this.updateLegend(validExtent[0], validExtent[1]);
 
 		this.renderVis();
 	}
@@ -244,6 +255,11 @@ export class WorldMap {
 		// Update SVG dimensions
 		this.svg.attr('width', width).attr('height', height).attr('viewBox', `0 0 ${width} ${height}`);
 
+		// Update legend position on resize
+		if (this.legendGroup) {
+			this.legendGroup.attr('transform', `translate(${this.width - 160}, ${this.height - 40})`);
+		}
+
 		this.updateVis();
 	}
 
@@ -254,5 +270,79 @@ export class WorldMap {
 		return projectedPoint
 			? [projectedPoint[0] + this.config.margin.left, projectedPoint[1] + this.config.margin.top]
 			: null;
+	}
+
+	private initializeLegend() {
+		// Initialize gradient for legend
+		this.linearGradient = this.svg
+			.append('defs')
+			.append('linearGradient')
+			.attr('id', 'world-legend-gradient')
+			.attr('x1', '0%')
+			.attr('y1', '0%')
+			.attr('x2', '100%')
+			.attr('y2', '0%');
+
+		// Create legend group
+		this.legendGroup = this.svg
+			.append('g')
+			.attr('class', 'legend-group')
+			.attr('transform', `translate(${this.width - 160}, ${this.height - 40})`);
+
+		// Append legend title
+		this.legendTitle = this.legendGroup
+			.append('text')
+			.attr('class', 'legend-title semibold')
+			.attr('y', -5)
+			.attr('x', 0)
+			.style('font-size', '12px')
+			.text('Recent Immigration Count');
+
+		// Append legend rect
+		this.legendRect = this.legendGroup
+			.append('rect')
+			.attr('width', 120)
+			.attr('height', 10)
+			.style('stroke', '#ccc')
+			.style('stroke-width', '0.5px');
+
+		// Add min and max labels
+		this.legendGroup
+			.append('text')
+			.attr('class', 'min-value')
+			.attr('x', 15)
+			.attr('y', 20)
+			.style('font-size', '10px')
+			.style('text-anchor', 'end');
+
+		this.legendGroup
+			.append('text')
+			.attr('class', 'max-value')
+			.attr('x', 100)
+			.attr('y', 20)
+			.style('font-size', '10px')
+			.style('text-anchor', 'start');
+	}
+
+	private updateLegend(minValue: number, maxValue: number) {
+		if (!this.legendGroup || !this.legendRect || !this.legendTitle || !this.linearGradient) return;
+
+		// Update gradient stops
+		this.linearGradient.selectAll('stop').remove();
+		this.linearGradient
+			.append('stop')
+			.attr('offset', '0%')
+			.attr('stop-color', sequentialColorSchema[100]);
+		this.linearGradient
+			.append('stop')
+			.attr('offset', '100%')
+			.attr('stop-color', sequentialColorSchema[600]);
+
+		// Update legend rect fill
+		this.legendRect.attr('fill', 'url(#world-legend-gradient)');
+
+		// Update min and max values
+		this.legendGroup.select('.min-value').text(minValue.toFixed(0));
+		this.legendGroup.select('.max-value').text(maxValue.toFixed(0));
 	}
 }
