@@ -9,8 +9,11 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Toronto Neighbourhoods Lens</title>
+	<meta
+		name="description"
+		content="Are you moving to 🇨🇦 Toronto? Where should you settle down? Explore the neighborhoods with our interactive map and table."
+	/>
 </svelte:head>
 
 <section>
